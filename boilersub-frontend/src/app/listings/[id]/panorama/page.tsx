@@ -24,7 +24,7 @@ function resolvePanoramaImage(listing: Listing | null): string | null {
     return null;
   }
 
-  return listing.panorama_image ?? null;
+  return listing.panorama_image ?? listing.images?.[0] ?? null;
 }
 
 export default function ListingPanoramaPage() {
@@ -32,6 +32,18 @@ export default function ListingPanoramaPage() {
   const [listing, setListing] = useState<Listing | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [scriptsReady, setScriptsReady] = useState(false);
+
+  function handleClose() {
+    try {
+      if (window.opener) {
+        window.close();
+        return;
+      }
+    } catch {
+      // If browser blocks close, fall through to navigation fallback.
+    }
+    window.history.back();
+  }
 
   useEffect(() => {
     let active = true;
@@ -44,9 +56,6 @@ export default function ListingPanoramaPage() {
         }
 
         setListing(nextListing);
-        if (!nextListing.panorama_image) {
-          setError("No panorama image is attached to this listing yet.");
-        }
       })
       .catch((loadError) => {
         if (!active) {
@@ -69,6 +78,10 @@ export default function ListingPanoramaPage() {
     const viewer = window.initPanoramaViewer(panoramaImage, {
       containerId: "panorama-viewer",
       fallbackImage: panoramaImage,
+      autoLoad: true,
+      type: listing?.panorama_image ? "equirectangular" : "equirectangular",
+      haov: listing?.panorama_image ? 360 : 120, // Narrow field of view for non-panoramas
+      vaov: listing?.panorama_image ? 180 : 80,
     });
 
     return () => {
@@ -97,7 +110,7 @@ export default function ListingPanoramaPage() {
           <button
             className="rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold transition hover:bg-white/20"
             type="button"
-            onClick={() => window.close()}
+            onClick={handleClose}
           >
             Close
           </button>
