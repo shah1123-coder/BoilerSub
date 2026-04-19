@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AddressAutocompleteInput } from "@/components/AddressAutocompleteInput";
 import { AmenityChip } from "@/components/AmenityChip";
 import { Button } from "@/components/Button";
+import { CaptureQrCode } from "@/components/CaptureQrCode";
 import { Input, Textarea } from "@/components/Input";
 import { Toast } from "@/components/Toast";
 import { apiClient } from "@/lib/apiClient";
@@ -27,6 +28,8 @@ type FormState = {
   images: string[];
   panorama_image: string | null;
 };
+
+const DEFAULT_PUBLIC_ORIGIN = "https://boilersub.vercel.app";
 
 function toFormState(initial?: Partial<Listing | ListingPayload>): FormState {
   const payload = initial ?? emptyListingPayload();
@@ -104,19 +107,13 @@ export function ListingEditor({
     if (!captureSessionId || !captureToken || typeof window === "undefined") {
       return "";
     }
-    const baseOrigin = window.location.origin;
+    const configuredOrigin = process.env.NEXT_PUBLIC_PUBLIC_APP_URL?.trim();
+    const baseOrigin = configuredOrigin || window.location.origin || DEFAULT_PUBLIC_ORIGIN;
     const url = new URL("/capture-images", baseOrigin);
     url.searchParams.set("session", captureSessionId);
     url.searchParams.set("token", captureToken);
     return url.toString();
   }, [captureSessionId, captureToken]);
-  const qrImageUrl = useMemo(
-    () =>
-      phoneCaptureUrl
-        ? `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(phoneCaptureUrl)}`
-        : "",
-    [phoneCaptureUrl],
-  );
 
   useEffect(() => {
     let cancelled = false;
@@ -371,8 +368,8 @@ export function ListingEditor({
               </div>
               <div className="grid gap-4 md:grid-cols-[220px_1fr]">
                 <div className="rounded-2xl border border-[#c3d0ff] bg-white p-3">
-                  {qrImageUrl ? (
-                    <img alt="Scan to open phone camera capture" className="w-full rounded-xl" src={qrImageUrl} />
+                  {phoneCaptureUrl ? (
+                    <CaptureQrCode className="w-full rounded-xl" value={phoneCaptureUrl} />
                   ) : (
                     <div className="flex aspect-square items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
                   )}
@@ -731,8 +728,8 @@ export function ListingEditor({
             </label>
             <div className="mt-1 grid gap-4 md:grid-cols-[220px_1fr]">
               <div className="rounded-2xl border border-slate-200 bg-white p-3">
-                {qrImageUrl ? (
-                  <img alt="Scan to open phone camera capture" className="w-full rounded-xl" src={qrImageUrl} />
+                {phoneCaptureUrl ? (
+                  <CaptureQrCode className="w-full rounded-xl" value={phoneCaptureUrl} />
                 ) : (
                   <div className="flex aspect-square items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
                 )}

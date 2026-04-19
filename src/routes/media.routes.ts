@@ -1,26 +1,14 @@
-import crypto from "node:crypto";
 import { Router } from "express";
 import { sendError, sendSuccess } from "../lib/envelope.js";
-
-type CaptureSessionRecord = {
-  token: string;
-  images: string[];
-  createdAt: number;
-  updatedAt: number;
-};
-
-const captureSessions = new Map<string, CaptureSessionRecord>();
-const CAPTURE_SESSION_TTL_MS = 1000 * 60 * 30;
-const MAX_CAPTURE_IMAGES = 10;
-const JPEG_DATA_URL_REGEX = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/;
-
-function pruneCaptureSessions(now = Date.now()) {
-  captureSessions.forEach((session, id) => {
-    if (now - session.updatedAt > CAPTURE_SESSION_TTL_MS) {
-      captureSessions.delete(id);
-    }
-  });
-}
+import {
+  CAPTURE_SESSION_TTL_MS,
+  JPEG_DATA_URL_REGEX,
+  MAX_CAPTURE_IMAGES,
+  createCaptureSessionRecord,
+  deleteCaptureSession,
+  getCaptureSession,
+  saveCaptureSession,
+} from "../lib/captureSessions.js";
 
 function getCaptureToken(req: import("express").Request): string | null {
   const headerToken = req.header("x-capture-token");
@@ -43,24 +31,15 @@ function readIncomingImages(body: unknown): string[] {
 export function createMediaRouter(): Router {
   const router = Router();
 
-  router.post("/capture-sessions", (_req, res) => {
-    pruneCaptureSessions();
-    const id = crypto.randomUUID();
-    const token = crypto.randomUUID();
-    const now = Date.now();
-
-    captureSessions.set(id, {
-      token,
-      images: [],
-      createdAt: now,
-      updatedAt: now,
-    });
+  router.post("/capture-sessions", async (_req, res) => {
+    const { sessionId: id, session } = createCaptureSessionRecord();
+    await saveCaptureSession(id, session);
 
     return sendSuccess(
       res,
       {
         session_id: id,
-        token,
+        token: session.token,
         max_images: MAX_CAPTURE_IMAGES,
         expires_in_seconds: Math.floor(CAPTURE_SESSION_TTL_MS / 1000),
       },
@@ -68,10 +47,9 @@ export function createMediaRouter(): Router {
     );
   });
 
-  router.get("/capture-sessions/:id", (req, res) => {
-    pruneCaptureSessions();
+  router.get("/capture-sessions/:id", async (req, res) => {
     const sessionId = req.params.id;
-    const session = captureSessions.get(sessionId);
+    const session = await getCaptureSession(sessionId);
     if (!session) {
       return sendError(res, "capture_session_not_found", "Capture session not found", 404);
     }
@@ -90,10 +68,9 @@ export function createMediaRouter(): Router {
     });
   });
 
-  router.post("/capture-sessions/:id/images", (req, res) => {
-    pruneCaptureSessions();
+  router.post("/capture-sessions/:id/images", async (req, res) => {
     const sessionId = req.params.id;
-    const session = captureSessions.get(sessionId);
+    const session = await getCaptureSession(sessionId);
     if (!session) {
       return sendError(res, "capture_session_not_found", "Capture session not found", 404);
     }
@@ -122,7 +99,7 @@ export function createMediaRouter(): Router {
     }
 
     session.updatedAt = Date.now();
-    captureSessions.set(sessionId, session);
+    await saveCaptureSession(sessionId, session);
 
     return sendSuccess(res, {
       session_id: sessionId,
@@ -132,10 +109,9 @@ export function createMediaRouter(): Router {
     });
   });
 
-  router.delete("/capture-sessions/:id", (req, res) => {
-    pruneCaptureSessions();
+  router.delete("/capture-sessions/:id", async (req, res) => {
     const sessionId = req.params.id;
-    const session = captureSessions.get(sessionId);
+    const session = await getCaptureSession(sessionId);
     if (!session) {
       return sendError(res, "capture_session_not_found", "Capture session not found", 404);
     }
@@ -145,7 +121,7 @@ export function createMediaRouter(): Router {
       return sendError(res, "invalid_capture_token", "Invalid capture token", 403);
     }
 
-    captureSessions.delete(sessionId);
+    await deleteCaptureSession(sessionId);
     return sendSuccess(res, { status: "capture_session_closed" });
   });
 

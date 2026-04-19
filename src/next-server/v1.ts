@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { randomUUID } from "node:crypto";
 import {
   forgotPasswordSchema,
   changePasswordSchema,
@@ -17,6 +16,15 @@ import { updateMeSchema, userIdParamSchema } from "../schemas/users.schema";
 import { authService, listingsService, usersService } from "./container";
 import { supabaseServiceClient } from "../config/supabase";
 import {
+  CAPTURE_SESSION_TTL_MS,
+  JPEG_DATA_URL_REGEX,
+  MAX_CAPTURE_IMAGES,
+  createCaptureSessionRecord,
+  deleteCaptureSession,
+  getCaptureSession,
+  saveCaptureSession,
+} from "../lib/captureSessions";
+import {
   assertVerified,
   authenticate,
   checkRateLimit,
@@ -28,16 +36,6 @@ import {
 } from "./http";
 
 type RouteResult = Response;
-type CaptureSessionRecord = {
-  token: string;
-  images: string[];
-  createdAt: number;
-  updatedAt: number;
-};
-
-const captureSessions = new Map<string, CaptureSessionRecord>();
-const CAPTURE_SESSION_TTL_MS = 1000 * 60 * 30;
-const JPEG_DATA_URL_REGEX = /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/;
 
 const attachmentSchema = z.object({
   id: z.string(),
@@ -221,14 +219,6 @@ async function handleChats(
   if (error) throw new Error(error.message);
 
   return successResponse(requestId, 200, (messages as any[]).reverse());
-}
-
-function pruneCaptureSessions(now = Date.now()) {
-  captureSessions.forEach((session, id) => {
-    if (now - session.updatedAt > CAPTURE_SESSION_TTL_MS) {
-      captureSessions.delete(id);
-    }
-  });
 }
 
 function notFound(requestId: string): RouteResult {
@@ -568,8 +558,6 @@ async function handleMedia(
   _context: { userId?: string },
   segments: string[],
 ): Promise<RouteResult> {
-  pruneCaptureSessions();
-
   if (segments[1] !== "capture-sessions") {
     return notFound(requestId);
   }
@@ -582,25 +570,18 @@ async function handleMedia(
       return notFound(requestId);
     }
 
-    const id = randomUUID();
-    const token = randomUUID();
-    const now = Date.now();
-    captureSessions.set(id, {
-      token,
-      images: [],
-      createdAt: now,
-      updatedAt: now,
-    });
+    const { sessionId: id, session } = createCaptureSessionRecord();
+    await saveCaptureSession(id, session);
 
     return successResponse(requestId, 201, {
       session_id: id,
-      token,
-      max_images: 10,
+      token: session.token,
+      max_images: MAX_CAPTURE_IMAGES,
       expires_in_seconds: Math.floor(CAPTURE_SESSION_TTL_MS / 1000),
     });
   }
 
-  const record = captureSessions.get(sessionId);
+  const record = await getCaptureSession(sessionId);
   if (!record) {
     return errorResponse(requestId, 404, "capture_session_not_found", "Capture session not found");
   }
@@ -616,7 +597,7 @@ async function handleMedia(
       session_id: sessionId,
       images: record.images,
       image_count: record.images.length,
-      max_images: 10,
+      max_images: MAX_CAPTURE_IMAGES,
     });
   }
 
@@ -635,7 +616,7 @@ async function handleMedia(
 
     const merged = [...record.images];
     for (const image of incoming as string[]) {
-      if (merged.length >= 10) {
+      if (merged.length >= MAX_CAPTURE_IMAGES) {
         break;
       }
       merged.push(image);
@@ -643,18 +624,18 @@ async function handleMedia(
 
     record.images = merged;
     record.updatedAt = Date.now();
-    captureSessions.set(sessionId, record);
+    await saveCaptureSession(sessionId, record);
 
     return successResponse(requestId, 200, {
       session_id: sessionId,
       images: record.images,
       image_count: record.images.length,
-      max_images: 10,
+      max_images: MAX_CAPTURE_IMAGES,
     });
   }
 
   if (request.method === "DELETE" && !action) {
-    captureSessions.delete(sessionId);
+    await deleteCaptureSession(sessionId);
     return successResponse(requestId, 200, { status: "capture_session_closed" });
   }
 

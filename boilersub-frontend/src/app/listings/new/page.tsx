@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { AddressAutocompleteInput } from "@/components/AddressAutocompleteInput";
+import { CaptureQrCode } from "@/components/CaptureQrCode";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Toast } from "@/components/Toast";
 import { apiClient } from "@/lib/apiClient";
@@ -100,13 +101,6 @@ export default function NewListingPage() {
     return url.toString();
   }, [captureSessionId, captureToken]);
 
-  const qrImageUrl = useMemo(() => {
-    if (!phoneCaptureUrl) {
-      return "";
-    }
-    return `https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=${encodeURIComponent(phoneCaptureUrl)}`;
-  }, [phoneCaptureUrl]);
-
   return (
     <ProtectedRoute requireVerified>
       <main className="px-6 pb-24 pt-32 md:px-12">
@@ -175,8 +169,8 @@ export default function NewListingPage() {
                 <div className="rounded-2xl border border-[#afadac]/25 bg-[#f3f0ef] p-5 md:p-7">
                   <div className="grid items-center gap-6 md:grid-cols-[280px_1fr]">
                     <div className="mx-auto w-full max-w-[260px]">
-                      {sessionReady && qrImageUrl ? (
-                        <img alt="Scan to open phone camera capture" className="w-full rounded-xl bg-white p-2 shadow-sm" src={qrImageUrl} />
+                      {sessionReady && phoneCaptureUrl ? (
+                        <CaptureQrCode className="w-full rounded-xl bg-white p-2 shadow-sm" value={phoneCaptureUrl} />
                       ) : (
                         <div className="aspect-square w-full animate-pulse rounded-xl bg-[#dfdcdc]" />
                       )}
