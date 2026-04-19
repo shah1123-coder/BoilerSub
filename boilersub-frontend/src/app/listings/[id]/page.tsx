@@ -114,7 +114,7 @@ export default function ListingDetailPage() {
   const images = listing ? galleryImages(listing.images) : listingDetailImages;
   const canContactLister = Boolean(owner?.email);
   const galleryHref = listing ? `/listings/${listing.id}/gallery?start=0` : undefined;
-  const panoramaHref = listing?.panorama_image ? `/listings/${listing.id}/panorama` : undefined;
+  const panoramaHref = listing && (listing.panorama_image || listing.images?.[0]) ? `/listings/${listing.id}/panorama` : undefined;
 
   return (
     <>

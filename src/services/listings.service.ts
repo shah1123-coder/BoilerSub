@@ -24,6 +24,7 @@ export class ListingsService {
 
   async create(user: RequestUser, payload: ListingCreateInput): Promise<ListingRecord> {
     await this.assertFullyVerified(user.id);
+    const generatedPanoramaImage = payload.panorama_image ?? payload.images?.[0] ?? null;
     return this.listingRepository.create(user.id, {
       title: payload.title,
       description: payload.description ?? null,
@@ -36,7 +37,7 @@ export class ListingsService {
       address: payload.address ?? null,
       amenities: payload.amenities,
       images: payload.images,
-      panorama_image: payload.panorama_image ?? null,
+      panorama_image: generatedPanoramaImage,
     });
   }
 
@@ -46,6 +47,12 @@ export class ListingsService {
     if (existing.owner_id !== user.id && user.role !== "admin") {
       throw new ApiError(403, "forbidden", "Only the owner can modify this listing");
     }
+
+    const nextImages = payload.images ?? existing.images;
+    const nextPanoramaImage =
+      payload.panorama_image !== undefined
+        ? payload.panorama_image
+        : existing.panorama_image ?? nextImages?.[0] ?? null;
 
     return this.listingRepository.update(id, existing.owner_id, {
       ...(payload.title !== undefined ? { title: payload.title } : {}),
@@ -59,7 +66,7 @@ export class ListingsService {
       ...(payload.address !== undefined ? { address: payload.address } : {}),
       ...(payload.amenities !== undefined ? { amenities: payload.amenities } : {}),
       ...(payload.images !== undefined ? { images: payload.images } : {}),
-      ...(payload.panorama_image !== undefined ? { panorama_image: payload.panorama_image } : {}),
+      panorama_image: nextPanoramaImage,
     });
   }
 
