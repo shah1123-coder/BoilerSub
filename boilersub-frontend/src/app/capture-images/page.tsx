@@ -7,6 +7,7 @@ import { Toast } from "@/components/Toast";
 import { apiClient } from "@/lib/apiClient";
 
 const MAX_IMAGES = 10;
+const MAX_CAPTURE_DIMENSION = 1600;
 
 export default function CaptureImagesPage() {
   const params = useSearchParams();
@@ -20,6 +21,7 @@ export default function CaptureImagesPage() {
 
   const [captured, setCaptured] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0);
   const [message, setMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
@@ -72,15 +74,18 @@ export default function CaptureImagesPage() {
 
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    canvas.width = video.videoWidth || 1280;
-    canvas.height = video.videoHeight || 720;
+    const rawWidth = video.videoWidth || 1280;
+    const rawHeight = video.videoHeight || 720;
+    const scale = Math.min(1, MAX_CAPTURE_DIMENSION / Math.max(rawWidth, rawHeight));
+    canvas.width = Math.max(1, Math.round(rawWidth * scale));
+    canvas.height = Math.max(1, Math.round(rawHeight * scale));
     const context = canvas.getContext("2d");
     if (!context) {
       setMessage("Unable to process photo capture.");
       return;
     }
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-    const image = canvas.toDataURL("image/jpeg", 0.92);
+    const image = canvas.toDataURL("image/jpeg", 0.82);
     setCaptured((current) => [...current, image]);
   }
 
@@ -97,14 +102,19 @@ export default function CaptureImagesPage() {
     }
 
     setBusy(true);
+    setUploadProgress(0);
     try {
-      await apiClient.media.appendCaptureImages(sessionId, token, captured);
+      for (let index = 0; index < captured.length; index += 1) {
+        await apiClient.media.appendCaptureImages(sessionId, token, [captured[index]]);
+        setUploadProgress(index + 1);
+      }
       setSuccessMessage("Photos synced to your listing form. You can capture more or return to your desktop.");
       setCaptured([]);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Failed to upload captured photos");
     } finally {
       setBusy(false);
+      setUploadProgress(0);
     }
   }
 
@@ -143,7 +153,7 @@ export default function CaptureImagesPage() {
           type="button"
           onClick={() => void uploadPhotos()}
         >
-          {busy ? "Uploading…" : "Use These Photos"}
+          {busy ? `Uploading ${uploadProgress}/${captured.length}…` : "Use These Photos"}
         </button>
       </div>
 

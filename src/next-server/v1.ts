@@ -582,8 +582,8 @@ async function handleMedia(
       return notFound(requestId);
     }
 
-    const id = crypto.randomUUID();
-    const token = crypto.randomUUID();
+    const id = randomUUID();
+    const token = randomUUID();
     const now = Date.now();
     captureSessions.set(id, {
       token,
