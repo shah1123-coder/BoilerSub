@@ -8,12 +8,7 @@ type Suggestion = {
 };
 
 type PlacesAutocompleteResponse = {
-  suggestions?: Array<{
-    placePrediction?: {
-      placeId?: string;
-      text?: { text?: string };
-    };
-  }>;
+  suggestions?: Suggestion[];
 };
 
 export function AddressAutocompleteInput({
@@ -29,7 +24,6 @@ export function AddressAutocompleteInput({
   value: string;
   onValueChange: (value: string) => void;
 }) {
-  const mapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY?.trim();
   const sessionToken = useMemo(() => crypto.randomUUID(), []);
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [open, setOpen] = useState(false);
@@ -39,12 +33,6 @@ export function AddressAutocompleteInput({
   const suppressFetchRef = useRef(false);
 
   useEffect(() => {
-    if (!mapsApiKey) {
-      setSuggestions([]);
-      setOpen(false);
-      return;
-    }
-
     const query = value.trim();
     if (suppressFetchRef.current) {
       suppressFetchRef.current = false;
@@ -60,18 +48,8 @@ export function AddressAutocompleteInput({
     const timer = window.setTimeout(async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://places.googleapis.com/v1/places:autocomplete", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Goog-Api-Key": mapsApiKey,
-            "X-Goog-FieldMask": "suggestions.placePrediction.placeId,suggestions.placePrediction.text.text",
-          },
-          body: JSON.stringify({
-            input: query,
-            includedRegionCodes: ["us"],
-            sessionToken,
-          }),
+        const params = new URLSearchParams({ q: query, session: sessionToken });
+        const response = await fetch(`/api/places/autocomplete?${params.toString()}`, {
           signal: controller.signal,
         });
 
@@ -83,14 +61,10 @@ export function AddressAutocompleteInput({
 
         const payload = (await response.json()) as PlacesAutocompleteResponse;
         const nextSuggestions: Suggestion[] = (payload.suggestions ?? [])
-          .map((item) => {
-            const placeId = item.placePrediction?.placeId ?? "";
-            const text = item.placePrediction?.text?.text?.trim() ?? "";
-            return {
-              id: placeId || text,
-              text,
-            };
-          })
+          .map((item) => ({
+            id: item.id?.trim() ?? "",
+            text: item.text?.trim() ?? "",
+          }))
           .filter((item) => Boolean(item.id) && Boolean(item.text));
 
         setSuggestions(nextSuggestions);
@@ -112,7 +86,7 @@ export function AddressAutocompleteInput({
       window.clearTimeout(timer);
       controller.abort();
     };
-  }, [mapsApiKey, sessionToken, value]);
+  }, [sessionToken, value]);
 
   const commitSuggestion = (suggestion: Suggestion) => {
     suppressFetchRef.current = true;
