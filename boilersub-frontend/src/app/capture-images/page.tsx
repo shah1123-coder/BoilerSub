@@ -138,7 +138,7 @@ export default function CaptureImagesPage() {
           Take Photo
         </button>
         <button
-          className="rounded-xl bg-[#6a5a32] px-6 py-3 font-bold text-[#fff1d9] shadow-lg shadow-[#6a5a32]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-xl bg-[#0052d0] px-6 py-3 font-bold text-[#eaf1ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
           disabled={busy}
           type="button"
           onClick={() => void uploadPhotos()}

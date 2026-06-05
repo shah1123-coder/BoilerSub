@@ -384,12 +384,12 @@ export default function NewListingPage() {
 
               <footer className="flex flex-col items-center justify-between gap-8 pt-8 md:flex-row">
                 <div className="flex items-center gap-3 text-[#5c5b5b]/80">
-                  <span className="text-[#6a5a32]">✓</span>
+                  <span className="text-[#0052d0]">✓</span>
                   <p className="text-sm font-medium">Only verified Purdue students can publish listings</p>
                 </div>
                 <div className="flex w-full items-center gap-8 md:w-auto">
                   <button
-                    className="font-bold tracking-tight text-[#5c5b5b] transition-colors hover:text-[#a03a0f]"
+                    className="font-bold tracking-tight text-[#5c5b5b] transition-colors hover:text-[#0052d0]"
                     type="button"
                     onClick={() => router.push("/listings")}
                   >
@@ -410,7 +410,7 @@ export default function NewListingPage() {
           <aside className="space-y-8 lg:w-96">
             <div className="sticky top-32">
               <div className="group relative overflow-hidden rounded-3xl bg-[#f3f0ef] p-8">
-                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#6a5a32]/10 blur-2xl transition-all duration-700 group-hover:bg-[#6a5a32]/20" />
+                <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0052d0]/10 blur-2xl transition-all duration-700 group-hover:bg-[#0052d0]/20" />
                 <h3 className="relative z-10 mb-6 text-2xl font-extrabold text-[#2f2f2e]">Tips for a strong listing</h3>
                 <ul className="relative z-10 space-y-6">
                   <li className="flex gap-4">
@@ -426,7 +426,7 @@ export default function NewListingPage() {
                   </li>
                   <li className="flex gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
-                      <span className="text-lg text-[#a03a0f]">⚡</span>
+                      <span className="text-lg text-[#0052d0]">⚡</span>
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-[#2f2f2e]">Be Kinetic</h4>
@@ -437,7 +437,7 @@ export default function NewListingPage() {
                   </li>
                   <li className="flex gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
-                      <span className="text-lg text-[#6a5a32]">💬</span>
+                      <span className="text-lg text-[#0052d0]">💬</span>
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-[#2f2f2e]">Clear Details</h4>
@@ -447,16 +447,16 @@ export default function NewListingPage() {
                     </div>
                   </li>
                 </ul>
-                <div className="mt-10 rounded-2xl border-l-4 border-[#a03a0f] bg-[#ff946e]/20 p-4">
+                <div className="mt-10 rounded-2xl border-l-4 border-[#0052d0] bg-[#0052d0]/20 p-4">
                   <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#902e02]">High Demand</p>
-                  <p className="text-sm font-medium text-[#5c1a00]">
+                  <p className="text-sm font-medium text-[#ffffff]">
                     Listings for the Spring semester are currently receiving 2x normal traffic.
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 flex cursor-pointer items-center gap-4 px-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e4e2e1] transition-colors hover:bg-[#fee6b2]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e4e2e1] transition-colors hover:bg-[#eaf1ff]">
                   <span className="text-[#5c5b5b]">?</span>
                 </div>
                 <div>

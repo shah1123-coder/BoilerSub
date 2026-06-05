@@ -27,31 +27,31 @@ export default function LoginPage() {
             sizes="(min-width: 768px) 55vw, 100vw"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtA0jc6iTBDRHLrwQypBG6jioP_ij2z9Dy2LYUCLO48nFzrBnXEK-qpJc92fdD7TRsU4_pDbYNh-WGHcKej91oy9BgdPSPM3uoHLKwT7a1JvLRd-sFBAP3w4cUTrR_SPmexIzV3pBAn-SdL8QjWJ9ydDgyIOSwyNrZH7lgS1e5XlbgcLkF4xa0Q_WJhqKfAjcUTgD2iMa7YDQi0V7u-_RF1ofbhYRn3OLUlUxEz_eeutULZNr5QgCRZy5_fCDvE4oVreFqMt3qzcy9"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#6a5a32]/80 via-[#6a5a32]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0052d0]/80 via-[#0052d0]/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col justify-end p-8 text-[#fff1d9] md:p-20">
+        <div className="relative z-10 flex h-full flex-col justify-end p-8 text-[#eaf1ff] md:p-20">
           <div className="max-w-xl space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#ff946e] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#5c1a00]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0052d0] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#ffffff]">
               <span>✓</span>
               Student-Only Access
             </div>
             <h1 className="font-display text-4xl font-extrabold leading-none tracking-tighter md:text-7xl">
               Designed for
               <br />
-              <span className="text-[#fee6b2]">Boilermakers.</span>
+              <span className="text-[#eaf1ff]">Boilermakers.</span>
             </h1>
-            <p className="max-w-md text-lg text-[#fee6b2]/90 md:text-xl">
+            <p className="max-w-md text-lg text-[#eaf1ff]/90 md:text-xl">
               Join the most trusted marketplace at Purdue. Verified community members, secure subleases, and seamless housing transitions.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-8">
               <div className="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
                 <div className="mb-1 text-3xl font-display font-bold text-white">10k+</div>
-                <div className="text-sm uppercase tracking-wider text-[#fee6b2]/70">Verified Students</div>
+                <div className="text-sm uppercase tracking-wider text-[#eaf1ff]/70">Verified Students</div>
               </div>
               <div className="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
                 <div className="mb-1 text-3xl font-display font-bold text-white">500+</div>
-                <div className="text-sm uppercase tracking-wider text-[#fee6b2]/70">Active Subleases</div>
+                <div className="text-sm uppercase tracking-wider text-[#eaf1ff]/70">Active Subleases</div>
               </div>
             </div>
           </div>

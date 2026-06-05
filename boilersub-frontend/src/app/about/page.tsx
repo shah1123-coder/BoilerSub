@@ -29,12 +29,12 @@ const steps = [
 export default function AboutPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-6 py-14 text-[#2f2f2e] md:px-10 md:py-20">
-      <section className="rounded-3xl bg-gradient-to-br from-[#6a5a32] via-[#5e4e27] to-[#2f2f2e] p-10 text-[#fff1d9] shadow-[0_20px_60px_rgba(0,0,0,0.18)] md:p-14">
-        <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#fee6b2]">About BoilerSub</p>
+      <section className="rounded-3xl bg-gradient-to-br from-[#0052d0] via-[#5e4e27] to-[#2f2f2e] p-10 text-[#eaf1ff] shadow-[0_20px_60px_rgba(0,0,0,0.18)] md:p-14">
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#eaf1ff]">About BoilerSub</p>
         <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
           Built for Purdue students, not the open internet.
         </h1>
-        <p className="mt-6 max-w-3xl text-lg text-[#fee6b2]/90">
+        <p className="mt-6 max-w-3xl text-lg text-[#eaf1ff]/90">
           BoilerSub is a Purdue-focused sublease marketplace designed to make housing transitions faster, safer, and more
           transparent for the student community.
         </p>

@@ -65,7 +65,7 @@ export default function HomePage() {
               <h1 className="mb-6 font-display text-6xl font-extrabold tracking-tighter text-white drop-shadow-2xl md:text-8xl">
                 Stop doomscrolling
                 <br />
-                <span className="text-[#c3d0ff]">Apartments</span>
+                <span className="text-[#0052d0]">Apartments</span>
               </h1>
               <p className="mx-auto mb-12 max-w-2xl text-xl font-medium text-white/90 drop-shadow-md md:text-2xl">
                 The elite housing curator for the Purdue community. Find your next home in West Lafayette with kinetic
@@ -121,7 +121,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
 
               <Link
-                className="rounded-full bg-[#a03a0f] px-8 py-3 font-bold text-[#ffefeb] shadow-lg transition-all hover:brightness-110"
+                className="rounded-full bg-[#0052d0] px-8 py-3 font-bold text-white shadow-lg transition-all hover:brightness-110"
                 href="/listings/new"
               >
                 Post Your Sublease
@@ -134,7 +134,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-7xl bg-transparent px-8 py-24" id="selection">
           <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#a03a0f]">The Selection</span>
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#0052d0]">The Selection</span>
               <h2 className="mt-2 font-display text-5xl font-black tracking-tighter text-[#2f2f2e]">
                 Curated Living Spaces
               </h2>
@@ -156,13 +156,13 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-8">
                 <div className="mb-3 flex items-center gap-2">
-                  <span className="rounded-full bg-[#ff946e] px-4 py-1 text-xs font-bold uppercase tracking-wider text-[#5c1a00]">
+                  <span className="rounded-full bg-[#0052d0] px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
                     Available Now
                   </span>
                 </div>
                 <h3 className="mb-2 font-display text-3xl font-bold text-white">{featureCards[0].title}</h3>
                 <p className="mb-4 font-medium text-white/70">{featureCards[0].subtitle}</p>
-                <span className="font-display text-4xl font-black text-[#c3d0ff]">
+                <span className="font-display text-4xl font-black text-[#0052d0]">
                   {featureCards[0].price}
                   <span className="ml-2 text-sm font-normal text-white/60">{featureCards[0].note}</span>
                 </span>
@@ -193,7 +193,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative flex flex-col justify-between overflow-hidden rounded-[1.5rem] border border-[#afadac]/10 bg-[#dfdcdc] p-8">
-              <div className="text-[#6a5a32]">
+              <div className="text-[#0052d0]">
                 <h3 className="font-display text-5xl font-black">2.4k</h3>
                 <p className="mt-2 text-sm font-bold uppercase tracking-widest">Active Students</p>
               </div>

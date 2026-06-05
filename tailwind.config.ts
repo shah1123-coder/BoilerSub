@@ -10,11 +10,11 @@ const config: Config = {
       colors: {
         brand: {
           blue: "#0052d0",
-          coral: "#6a5a32",
+          coral: "#0052d0",
           sand: "#fafaf8",
           ink: "#0f172a",
-          mist: "#d7e5ff",
-          gold: "#8f7a49",
+          mist: "#eaf1ff",
+          gold: "#0052d0",
         },
       },
       fontFamily: {

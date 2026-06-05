@@ -77,7 +77,7 @@ export default function ResetPasswordPage() {
           {successMessage && <Toast kind="success" message={successMessage} />}
 
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="password">
+            <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="password">
               New Password
             </label>
             <div className="relative">
@@ -108,7 +108,7 @@ export default function ResetPasswordPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="confirm">
+            <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="confirm">
               Confirm New Password
             </label>
             <div className="relative">

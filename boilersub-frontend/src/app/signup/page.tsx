@@ -22,7 +22,7 @@ export default function SignupPage() {
 
   return (
     <main className="flex min-h-screen flex-col text-[#2f2f2e] md:flex-row">
-      <section className="relative hidden w-full items-end overflow-hidden bg-[#6a5a32] p-12 md:flex md:w-5/12 lg:p-20">
+      <section className="relative hidden w-full items-end overflow-hidden bg-[#0052d0] p-12 md:flex md:w-5/12 lg:p-20">
         <div className="absolute inset-0 z-0 opacity-40">
           <Image
             alt="Purdue University campus architecture with classical brick buildings and modern student pathways under a clear sky"
@@ -32,45 +32,45 @@ export default function SignupPage() {
             sizes="(min-width: 768px) 42vw, 0px"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJpMMDbdEFh7srZoyw782uwhL1gbQVeEAqye4OBYoikH2f5JkMGlxCnZTZYKQBU8yIz6zEWZQ1NeEcqNZBVgv6qq6BV_JSB4CwidjBcmVyOiVI_nvH1yNlYlUj8yXIgkGuFUuo8aFr1snqggnminiV-THFKdOpfhGV7119rqBZJrXHHmGKJDDEP2GSrEn2xh5LItei_g4W_zQDkbI8Q_agUJGJUPZvOC3uYigbQl3nAVsfpzja3sQqtnn8aDBT-rAyMdUQKnG0cleV"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#6a5a32] via-[#6a5a32]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0052d0] via-[#0052d0]/40 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full">
           <div className="mb-12 flex items-center gap-2">
-            <span className="text-3xl font-black italic tracking-tighter text-[#fff1d9]">BoilerSub</span>
+            <span className="text-3xl font-black italic tracking-tighter text-[#eaf1ff]">BoilerSub</span>
           </div>
-          <h2 className="mb-8 max-w-sm font-display text-5xl font-extrabold leading-tight tracking-tighter text-[#fff1d9] lg:text-7xl">
+          <h2 className="mb-8 max-w-sm font-display text-5xl font-extrabold leading-tight tracking-tighter text-[#eaf1ff] lg:text-7xl">
             Student <span className="font-light italic">Housing</span> Redefined.
           </h2>
 
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-4 rounded-xl border border-[#fff1d9]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#fee6b2]/30 text-[#fff1d9]">
+            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>✓</span>
               </div>
               <div>
-                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#fff1d9]">Purdue-only access</p>
-                <p className="text-xs text-[#fff1d9]/70">Exclusively for @purdue.edu emails.</p>
+                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#eaf1ff]">Purdue-only access</p>
+                <p className="text-xs text-[#eaf1ff]/70">Exclusively for @purdue.edu emails.</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-xl border border-[#fff1d9]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#fee6b2]/30 text-[#fff1d9]">
+            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>◉</span>
               </div>
               <div>
-                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#fff1d9]">Verified students</p>
-                <p className="text-xs text-[#fff1d9]/70">Join 5,000+ Boilermakers today.</p>
+                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#eaf1ff]">Verified students</p>
+                <p className="text-xs text-[#eaf1ff]/70">Join 5,000+ Boilermakers today.</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-xl border border-[#fff1d9]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#fee6b2]/30 text-[#fff1d9]">
+            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>🔒</span>
               </div>
               <div>
-                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#fff1d9]">
+                <p className="font-display text-sm font-bold uppercase tracking-wider text-[#eaf1ff]">
                   Secure sublease flow
                 </p>
-                <p className="text-xs text-[#fff1d9]/70">End-to-end encryption for every lease.</p>
+                <p className="text-xs text-[#eaf1ff]/70">End-to-end encryption for every lease.</p>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function SignupPage() {
 
       <section className="flex flex-1 flex-col items-center justify-center bg-transparent p-6 md:p-12 lg:p-24">
         <div className="mb-12 md:hidden">
-          <span className="text-3xl font-black italic tracking-tighter text-[#6a5a32]">BoilerSub</span>
+          <span className="text-3xl font-black italic tracking-tighter text-[#0052d0]">BoilerSub</span>
         </div>
 
         <div className="w-full max-w-md">
@@ -87,9 +87,9 @@ export default function SignupPage() {
             <h1 className="mb-4 font-display text-4xl font-extrabold leading-none tracking-tighter text-[#2f2f2e] lg:text-5xl">
               Create your BoilerSub account
             </h1>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a03a0f]/10 bg-[#ff946e]/30 px-3 py-1.5">
-              <span className="text-sm text-[#a03a0f]">!</span>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#5c1a00]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0052d0]/10 bg-[#0052d0]/30 px-3 py-1.5">
+              <span className="text-sm text-[#0052d0]">!</span>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#ffffff]">
                 @purdue.edu only access for verified Boilermakers
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function SignupPage() {
             {message && <Toast kind="error" message={message} />}
 
             <div className="space-y-1.5">
-              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="email">
+              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="email">
                 Purdue Email Address
               </label>
               <div className="group relative">
@@ -156,7 +156,7 @@ export default function SignupPage() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="password">
+              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="password">
                 Password
               </label>
               <div className="group relative">
@@ -186,7 +186,7 @@ export default function SignupPage() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="confirm_password">
+              <label className="ml-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="confirm_password">
                 Confirm Password
               </label>
               <div className="group relative">

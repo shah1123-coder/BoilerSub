@@ -213,8 +213,8 @@ export default function ListingsPage() {
                     <ListingImageCarousel alt={listing.title} images={imageForListing(listing.images, index)} />
                     {/* {index === 0 ? (
                       <div className="absolute left-4 top-4 flex gap-2">
-                        <span className="flex items-center gap-1 rounded-full bg-[#ff946e] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#5c1a00]">
-                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#a03a0f]" />
+                        <span className="flex items-center gap-1 rounded-full bg-[#0052d0] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#ffffff]">
+                          <span className="h-2 w-2 animate-pulse rounded-full bg-[#0052d0]" />
                           Available Now
                         </span>
                       </div>
@@ -241,7 +241,7 @@ export default function ListingsPage() {
                         {listing.title}
                       </h3>
                       <div className="text-right">
-                        <span className="block text-2xl font-black leading-none text-[#6a5a32]">${formatPrice(listing.price)}</span>
+                        <span className="block text-2xl font-black leading-none text-[#0052d0]">${formatPrice(listing.price)}</span>
                         <span className="text-[9px] font-bold uppercase tracking-widest text-[#5c5b5b]">/ month</span>
                       </div>
                     </div>
@@ -275,7 +275,7 @@ export default function ListingsPage() {
                 </Link>
               ))}
 
-              <article className="group relative flex flex-col items-center justify-center overflow-hidden rounded-[1.5rem] border-2 border-dashed border-[#0052d0]/30 bg-[#c3d0ff] p-6 text-center">
+              <article className="group relative flex flex-col items-center justify-center overflow-hidden rounded-[1.5rem] border-2 border-dashed border-[#0052d0]/30 bg-[#0052d0] p-6 text-center">
                 <span className="mb-3 text-5xl text-[#0052d0] transition-transform group-hover:scale-110">🏠</span>
                 <h3 className="mb-1 text-lg font-extrabold text-[#0040a5]">Have a place to list?</h3>
                 <p className="mb-4 text-[11px] font-medium uppercase tracking-wider text-[#0040a5]/70">
@@ -315,7 +315,7 @@ export default function ListingsPage() {
 
       <footer className="z-50 flex h-24 w-full shrink-0 items-center justify-between border-t border-[#afadac]/20 bg-transparent px-8">
         <div className="flex items-center gap-4">
-          <span className="text-sm font-bold text-[#6a5a32]">BoilerSub</span>
+          <span className="text-sm font-bold text-[#0052d0]">BoilerSub</span>
           <span className="text-[10px] text-gray-400">© 2024</span>
         </div>
         <div className="flex items-center gap-6">
@@ -326,8 +326,8 @@ export default function ListingsPage() {
             Terms
           </a>
           <div className="flex items-center gap-1 rounded-full bg-[#eae7e7] px-3 py-1">
-            <span className="text-xs text-[#6a5a32]">✓</span>
-            <span className="text-[9px] font-bold uppercase tracking-tighter text-[#6a5a32]">Verified</span>
+            <span className="text-xs text-[#0052d0]">✓</span>
+            <span className="text-[9px] font-bold uppercase tracking-tighter text-[#0052d0]">Verified</span>
           </div>
         </div>
       </footer>

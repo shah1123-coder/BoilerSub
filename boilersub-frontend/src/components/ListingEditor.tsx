@@ -176,8 +176,8 @@ export function ListingEditor({
         <div className="mb-12 flex flex-col gap-2">
           <div className="flex flex-wrap items-center gap-4">
             <h1 className="font-display text-4xl font-black tracking-[-0.06em] text-stone-900 md:text-5xl">{title}</h1>
-            <span className="flex items-center gap-2 rounded-full border border-[#ff946e]/30 bg-[#ff946e]/15 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#5c1a00]">
-              <span className="h-2 w-2 rounded-full bg-[#a03a0f]" />
+            <span className="flex items-center gap-2 rounded-full border border-[#0052d0]/30 bg-[#0052d0]/15 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#ffffff]">
+              <span className="h-2 w-2 rounded-full bg-[#0052d0]" />
               Live
             </span>
           </div>
@@ -203,7 +203,7 @@ export function ListingEditor({
             {message && <Toast kind="error" message={message} />}
 
             <div className="space-y-6">
-              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Basic Information</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Basic Information</h2>
               <div className="space-y-4">
                 <div>
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-stone-500" htmlFor="title">
@@ -233,7 +233,7 @@ export function ListingEditor({
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Pricing & Availability</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Pricing & Availability</h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-stone-500" htmlFor="price">
@@ -281,7 +281,7 @@ export function ListingEditor({
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Location & Specs</h2>
+              <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Location & Specs</h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div className="md:col-span-2">
                   <label className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-stone-500" htmlFor="address">
@@ -333,7 +333,7 @@ export function ListingEditor({
 
             <div className="space-y-6">
               <div className="flex items-end justify-between gap-4">
-                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Amenities & Perks</h2>
+                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Amenities & Perks</h2>
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0052d0]">Edit All</span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -344,7 +344,7 @@ export function ListingEditor({
                       key={amenity}
                       className={
                         active
-                          ? "rounded-full border-2 border-transparent bg-[#c3d0ff] px-5 py-2.5 text-sm font-bold text-[#0040a5] transition-all hover:border-[#0052d0]"
+                          ? "rounded-full border-2 border-transparent bg-[#0052d0] px-5 py-2.5 text-sm font-bold text-[#0040a5] transition-all hover:border-[#0052d0]"
                           : "rounded-full border-2 border-transparent bg-[#e4e2e1] px-5 py-2.5 text-sm font-bold text-stone-600 transition-all hover:bg-[#dfdcdc]"
                       }
                       type="button"
@@ -366,11 +366,11 @@ export function ListingEditor({
 
             <div className="space-y-4">
               <div className="flex items-end justify-between gap-4">
-                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Photos</h2>
+                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Photos</h2>
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500">JPEG only, up to {MAX_LISTING_IMAGES}</span>
               </div>
               <div className="grid gap-4 md:grid-cols-[220px_1fr]">
-                <div className="rounded-2xl border border-[#c3d0ff] bg-white p-3">
+                <div className="rounded-2xl border border-[#0052d0] bg-white p-3">
                   {qrImageUrl ? (
                     <img alt="Scan to open phone camera capture" className="w-full rounded-xl" src={qrImageUrl} />
                   ) : (
@@ -409,7 +409,7 @@ export function ListingEditor({
 
             <div className="space-y-4">
               <div className="flex items-end justify-between gap-4">
-                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#6a5a32]">Panorama</h2>
+                <h2 className="text-xs font-black uppercase tracking-[0.22em] text-[#0052d0]">Panorama</h2>
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500">Pick from synced phone captures</span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -425,7 +425,7 @@ export function ListingEditor({
                 ))}
                 {form.panorama_image ? (
                   <button
-                    className="rounded-full border border-[#e6c7b8] bg-[#fff1ea] px-3 py-1 text-xs font-semibold text-[#9a4a26]"
+                    className="rounded-full border border-[#dbeafe] bg-[#ffffff] px-3 py-1 text-xs font-semibold text-[#0052d0]"
                     type="button"
                     onClick={() => setForm((current) => ({ ...current, panorama_image: null }))}
                   >
@@ -468,7 +468,7 @@ export function ListingEditor({
 
               {onDelete ? (
                 <button
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-[#a03a0f] transition-colors hover:bg-[#ff946e]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-[#0052d0] transition-colors hover:bg-[#0052d0]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                   disabled={deleting || busy}
                   type="button"
                   onClick={async () => {
@@ -496,7 +496,7 @@ export function ListingEditor({
 
           <aside className="space-y-8 lg:sticky lg:top-28">
             <div className="group rounded-[2rem] bg-white/92 p-6 shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
-              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#dfe8ff_0%,#fef2d2_45%,#ffd8cb_100%)]">
+              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]">
                 {previewImage ? (
                   <Image
                     alt={payload.title || "Listing preview"}
@@ -507,12 +507,12 @@ export function ListingEditor({
                     unoptimized={previewImage.startsWith("data:image/")}
                   />
                 ) : null}
-                <div className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-[0.6rem] font-black uppercase tracking-[0.24em] text-[#6a5a32] backdrop-blur-md">
+                <div className="absolute left-4 top-4 rounded-full bg-white/80 px-3 py-1 text-[0.6rem] font-black uppercase tracking-[0.24em] text-[#0052d0] backdrop-blur-md">
                   Preview
                 </div>
               </div>
               {panoramaPreviewImage ? (
-                <div className="mb-6 overflow-hidden rounded-2xl border border-[#c3d0ff] bg-[#eff3ff] p-3">
+                <div className="mb-6 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#eff3ff] p-3">
                   <p className="mb-2 text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#0052d0]">360 Preview Ready</p>
                   <div className="relative aspect-[2/1] overflow-hidden rounded-xl">
                     <Image
@@ -536,13 +536,13 @@ export function ListingEditor({
                   </span>
                 </div>
                 <p className="text-sm text-stone-500">{payload.address || "Add an address"}</p>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#6a5a32]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#0052d0]">
                   {payload.distance != null ? `${payload.distance} miles from campus` : "Add distance from campus"}
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[#fee6b2]/40 bg-[#fee6b2]/25 p-8">
+            <div className="rounded-[2rem] border border-[#eaf1ff]/40 bg-[#eaf1ff]/25 p-8">
               <div className="flex items-start gap-4">
                 <div className="rounded-xl bg-[#0052d0] p-2 text-white">
                   <span aria-hidden="true">↻</span>
@@ -557,7 +557,7 @@ export function ListingEditor({
             </div>
 
             <div className="rounded-[2rem] bg-stone-100/80 p-8">
-              <h4 className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#6a5a32]">Listing Owner</h4>
+              <h4 className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#0052d0]">Listing Owner</h4>
               <div className="mt-4 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-stone-200 text-lg font-black text-stone-700">
                   {(owner?.full_name ?? "Y").slice(0, 1).toUpperCase()}
@@ -783,7 +783,7 @@ export function ListingEditor({
               ))}
               {form.panorama_image ? (
                 <button
-                  className="rounded-full border border-[#e6c7b8] bg-[#fff1ea] px-3 py-1 text-xs font-semibold text-[#9a4a26]"
+                  className="rounded-full border border-[#dbeafe] bg-[#ffffff] px-3 py-1 text-xs font-semibold text-[#0052d0]"
                   type="button"
                   onClick={() => setForm((current) => ({ ...current, panorama_image: null }))}
                 >

@@ -34,7 +34,7 @@ function ListingStatusBadge({ startDate, endDate }: { startDate: string; endDate
 
   if (start > now) {
     return (
-      <span className="rounded-full bg-[#ffd8cb] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#7d2600]">
+      <span className="rounded-full bg-[#eaf1ff] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#ffffff]">
         Upcoming
       </span>
     );
@@ -42,7 +42,7 @@ function ListingStatusBadge({ startDate, endDate }: { startDate: string; endDate
 
   if (!end || end >= now) {
     return (
-      <span className="rounded-full bg-[#dfe8ff] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#0040a5]">
+      <span className="rounded-full bg-[#eaf1ff] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.24em] text-[#0040a5]">
         Active
       </span>
     );
@@ -135,10 +135,10 @@ export default function ProfileListingsPage() {
         {(error || actionError) && <Toast kind="error" message={actionError ?? error ?? "Something went wrong"} />}
 
         <section className="mb-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <StatCard accent="text-[#6a5a32]" label="Total Listings" value={String(stats.total).padStart(2, "0")} />
+          <StatCard accent="text-[#0052d0]" label="Total Listings" value={String(stats.total).padStart(2, "0")} />
           <StatCard accent="text-[#0052d0]" label="Active Now" value={String(stats.active).padStart(2, "0")} />
           <StatCard accent="text-stone-900" label="Average Rent" value={stats.averagePrice > 0 ? formatCurrency(stats.averagePrice) : "$0"} />
-          <StatCard accent="text-[#a03a0f]" label="Ending Soon" value={String(stats.endingSoon).padStart(2, "0")} />
+          <StatCard accent="text-[#0052d0]" label="Ending Soon" value={String(stats.endingSoon).padStart(2, "0")} />
         </section>
 
         <section className="grid gap-10 xl:grid-cols-12">
@@ -149,7 +149,7 @@ export default function ProfileListingsPage() {
               </div>
             ) : mine.length === 0 ? (
               <div className="rounded-[2rem] border-2 border-dashed border-stone-300 bg-white/65 p-16 text-center shadow-[0_12px_32px_rgba(0,0,0,0.03)]">
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#efe7d7] text-4xl text-[#6a5a32]">
+                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#eaf1ff] text-4xl text-[#0052d0]">
                   <span aria-hidden="true">⌂</span>
                 </div>
                 <h2 className="mt-6 font-display text-3xl font-black tracking-[-0.05em] text-stone-900">No listings yet?</h2>
@@ -167,7 +167,7 @@ export default function ProfileListingsPage() {
                     key={listing.id}
                     className="group overflow-hidden rounded-[2rem] border border-stone-200/60 bg-white/92 shadow-[0_12px_32px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(0,0,0,0.08)]"
                   >
-                    <div className="relative h-52 overflow-hidden bg-[linear-gradient(135deg,#dfe8ff_0%,#fef2d2_45%,#ffd8cb_100%)]">
+                    <div className="relative h-52 overflow-hidden bg-[linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]">
                       {filterRenderableImages(listing.images)[0] ? (
                         <Image
                           alt={listing.title}
@@ -178,7 +178,7 @@ export default function ProfileListingsPage() {
                           unoptimized={filterRenderableImages(listing.images)[0]!.startsWith("data:image/")}
                         />
                       ) : (
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.7),transparent_30%),linear-gradient(135deg,#dfe8ff_0%,#fef2d2_45%,#ffd8cb_100%)]" />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.7),transparent_30%),linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]" />
                       )}
                       <div className="absolute right-4 top-4">
                         <ListingStatusBadge endDate={listing.end_date} startDate={listing.start_date} />
@@ -218,7 +218,7 @@ export default function ProfileListingsPage() {
                           Edit
                         </Link>
                         <button
-                          className="rounded-xl px-4 py-2 font-display text-sm font-bold tracking-tight text-[#a03a0f] transition-colors hover:bg-[#a03a0f]/5 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="rounded-xl px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5 disabled:cursor-not-allowed disabled:opacity-50"
                           disabled={deletingId === listing.id}
                           type="button"
                           onClick={() => void handleDelete(listing.id, listing.title)}
@@ -259,13 +259,13 @@ export default function ProfileListingsPage() {
                 <div className="rounded-[1.5rem] bg-stone-50 p-5">
                   <div className="mb-2 flex items-center justify-between text-sm">
                     <span className="font-medium text-stone-500">Listings With Amenities</span>
-                    <span className="font-bold text-[#a03a0f]">
+                    <span className="font-bold text-[#0052d0]">
                       {stats.total === 0 ? "0%" : `${Math.round((mine.filter((listing) => listing.amenities.length > 0).length / stats.total) * 100)}%`}
                     </span>
                   </div>
                   <div className="h-2 overflow-hidden rounded-full bg-stone-200">
                     <div
-                      className="h-full rounded-full bg-[#a03a0f]"
+                      className="h-full rounded-full bg-[#0052d0]"
                       style={{
                         width: `${stats.total === 0 ? 0 : Math.max(12, Math.round((mine.filter((listing) => listing.amenities.length > 0).length / stats.total) * 100))}%`,
                       }}
@@ -275,7 +275,7 @@ export default function ProfileListingsPage() {
               </div>
 
               <div className="mt-8 border-t border-stone-200 pt-8">
-                <div className="rounded-[1.5rem] bg-[#dfe8ff]/45 p-5 text-sm leading-7 text-[#0040a5]">
+                <div className="rounded-[1.5rem] bg-[#eaf1ff]/45 p-5 text-sm leading-7 text-[#0040a5]">
                   <p className="font-display text-sm font-black uppercase tracking-[0.24em] text-[#0052d0]">BoilerTip</p>
                   <p className="mt-2">
                     Listings with clear dates, rent, and amenities read closer to complete and are easier for students to compare quickly.

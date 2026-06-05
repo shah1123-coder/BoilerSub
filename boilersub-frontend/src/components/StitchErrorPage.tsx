@@ -32,7 +32,7 @@ export function StitchErrorPage({
   return (
     <main className="relative flex min-h-[calc(100vh-9rem)] flex-col overflow-x-hidden text-[#2f2f2e]">
       <div className="pointer-events-none absolute inset-0 flex select-none items-center justify-center overflow-hidden">
-        <span className="-translate-y-12 text-[30rem] font-display font-extrabold leading-none tracking-tighter text-[#6a5a32]/[0.03] md:text-[45rem]">
+        <span className="-translate-y-12 text-[30rem] font-display font-extrabold leading-none tracking-tighter text-[#0052d0]/[0.03] md:text-[45rem]">
           404
         </span>
       </div>
@@ -40,7 +40,7 @@ export function StitchErrorPage({
       <section className="relative z-10 flex flex-1 items-center justify-center px-6 py-24">
         <div className="w-full max-w-4xl space-y-12 text-center">
           <div className="mb-4 flex justify-center">
-            <div className="h-3 w-3 rounded-full bg-[#a03a0f]" />
+            <div className="h-3 w-3 rounded-full bg-[#0052d0]" />
           </div>
 
           <div className="space-y-6">
@@ -53,7 +53,7 @@ export function StitchErrorPage({
           <div className="flex flex-col items-center justify-center gap-6 pt-4 md:flex-row">
             {onPrimaryAction ? (
               <button
-                className="rounded-full bg-gradient-to-br from-[#0052d0] to-[#afc2ff] px-10 py-5 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:scale-105 active:scale-95"
+                className="rounded-full bg-gradient-to-br from-[#0052d0] to-[#0052d0] px-10 py-5 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:scale-105 active:scale-95"
                 type="button"
                 onClick={onPrimaryAction}
               >
@@ -61,7 +61,7 @@ export function StitchErrorPage({
               </button>
             ) : (
               <Link
-                className="rounded-full bg-gradient-to-br from-[#0052d0] to-[#afc2ff] px-10 py-5 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:scale-105 active:scale-95"
+                className="rounded-full bg-gradient-to-br from-[#0052d0] to-[#0052d0] px-10 py-5 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:scale-105 active:scale-95"
                 href={primaryHref}
               >
                 {primaryLabel}
@@ -69,7 +69,7 @@ export function StitchErrorPage({
             )}
 
             <Link
-              className="flex items-center gap-2 rounded-full px-10 py-5 font-display text-lg font-bold text-[#6a5a32] transition-all duration-300 hover:bg-[#dfdcdc]"
+              className="flex items-center gap-2 rounded-full px-10 py-5 font-display text-lg font-bold text-[#0052d0] transition-all duration-300 hover:bg-[#dfdcdc]"
               href={secondaryHref}
             >
               <span aria-hidden="true" className="text-xl">
@@ -79,24 +79,24 @@ export function StitchErrorPage({
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 border-t border-[#6a5a32]/5 pt-24 text-left md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 border-t border-[#0052d0]/5 pt-24 text-left md:grid-cols-3">
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#a03a0f]">{tertiaryTitle}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]">{tertiaryTitle}</span>
               <p className="text-sm text-[#5c5b5b]">{tertiaryBody}</p>
             </div>
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6a5a32]">{supportTitle}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]">{supportTitle}</span>
               <p className="text-sm text-[#5c5b5b]">{supportBody}</p>
             </div>
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6a5a32]">{statusTitle}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]">{statusTitle}</span>
               <p className="text-sm text-[#5c5b5b]">{statusBody}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="pointer-events-none fixed right-[-6rem] top-1/4 h-96 w-96 rounded-full bg-[#6a5a32]/5 blur-[120px]" />
+      <div className="pointer-events-none fixed right-[-6rem] top-1/4 h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[120px]" />
       <div className="pointer-events-none fixed bottom-1/4 left-[-6rem] h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[120px]" />
     </main>
   );

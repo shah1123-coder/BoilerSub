@@ -24,11 +24,11 @@ export default function ForgotPasswordPage() {
           sizes="45vw"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhmU4eDsDdYDgpT1EE24gtb0EGOXYUeMNtVN7DhzzMYJNEXlaQ5dJmn9eziG_tYlyr6RFEkuH53knzgRw3Df_vGTR7lXC-7kayRZd07eKZmQHggId9A2ev1WmhwheDZp12keEfZvz169QxRJ8eIiED11BeJR1jczjiCbXXH0hMnI_C583fDnrBhL2i_LtC_0pRScrL2PCY_RMpAC_Zh7fzDHtxbb4VXyFc6dYhXQiUteSKtET-4mNThYaav7fTHpgftOalDqaq1KpH"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#5e4e27]/95 via-[#6a5a32]/70 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col justify-end p-14 text-[#fff1d9]">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#fee6b2]">Verified Secure</p>
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#5e4e27]/95 via-[#0052d0]/70 to-transparent" />
+        <div className="relative z-10 flex h-full flex-col justify-end p-14 text-[#eaf1ff]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#eaf1ff]">Verified Secure</p>
           <h1 className="font-display text-6xl font-extrabold leading-[1.05] tracking-tighter">Reset access.</h1>
-          <p className="mt-6 max-w-md text-lg text-[#fee6b2]/90">
+          <p className="mt-6 max-w-md text-lg text-[#eaf1ff]/90">
             We&apos;ll send a reset link to your Purdue email so you can set a new password securely.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
             {successMessage && <Toast kind="success" message={successMessage} />}
 
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#6a5a32]" htmlFor="email">
+              <label className="text-xs font-bold uppercase tracking-[0.2em] text-[#0052d0]" htmlFor="email">
                 Purdue Email Address
               </label>
               <input

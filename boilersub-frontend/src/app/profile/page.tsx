@@ -54,7 +54,7 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="space-y-8 md:col-span-8">
             <section className="relative overflow-hidden rounded-[2rem] bg-white p-8 shadow-[0px_12px_32px_rgba(0,0,0,0.04)]">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#6a5a32]/5 blur-3xl" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#0052d0]/5 blur-3xl" />
               <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row md:items-start">
                 <div className="relative">
                   <Image
@@ -71,7 +71,7 @@ export default function ProfilePage() {
                 <div className="flex-1 text-center md:text-left">
                   <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center">
                     <h2 className="font-display text-4xl font-bold">{user?.full_name ?? "Your Profile"}</h2>
-                    <span className="inline-flex items-center rounded-full bg-[#fee6b2] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#64532c]">
+                    <span className="inline-flex items-center rounded-full bg-[#eaf1ff] px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#0052d0]">
                       Verified Purdue Student
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export default function ProfilePage() {
                       <span className="text-[#0052d0]">✓</span>
                       Phone Verified
                     </span>
-                    <span className="flex items-center gap-2 rounded-full bg-[#ff946e] px-4 py-2 text-xs font-bold text-[#5c1a00]">
+                    <span className="flex items-center gap-2 rounded-full bg-[#0052d0] px-4 py-2 text-xs font-bold text-[#ffffff]">
                       <span>✦</span>
                       Fully Verified
                     </span>
@@ -121,7 +121,7 @@ export default function ProfilePage() {
                   <p className="text-sm text-[#5c5b5b]">Your current presence on BoilerSub.</p>
                 </div>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-6xl font-black text-[#6a5a32]">02</span>
+                  <span className="font-display text-6xl font-black text-[#0052d0]">02</span>
                   <span className="font-bold uppercase tracking-tight text-[#5c5b5b]">Active Listings</span>
                 </div>
               </div>
@@ -262,9 +262,9 @@ export default function ProfilePage() {
           </div>
 
           <aside className="space-y-6 md:col-span-4">
-            <div className="rounded-[2rem] border border-[#6a5a32]/10 bg-[#6a5a32]/5 p-8">
-              <div className="text-4xl text-[#6a5a32]">🛡</div>
-              <h4 className="mb-2 mt-4 font-display text-xl font-bold text-[#6a5a32]">Boiler Trust</h4>
+            <div className="rounded-[2rem] border border-[#0052d0]/10 bg-[#0052d0]/5 p-8">
+              <div className="text-4xl text-[#0052d0]">🛡</div>
+              <h4 className="mb-2 mt-4 font-display text-xl font-bold text-[#0052d0]">Boiler Trust</h4>
               <p className="text-sm leading-relaxed text-[#5c5b5b]">
                 Verified BoilerSub members build trust faster and receive more inquiries on their subleases. Keep your profile updated to maintain your student status.
               </p>
@@ -283,7 +283,7 @@ export default function ProfilePage() {
               </button>
               <div className="mx-4 my-1 h-px bg-[#dfdcdc]" />
               <button
-                className="group flex w-full items-center gap-4 rounded-2xl p-4 text-left text-[#b02500] transition-all hover:bg-[#f95630]/10"
+                className="group flex w-full items-center gap-4 rounded-2xl p-4 text-left text-[#0052d0] transition-all hover:bg-[#f95630]/10"
                 onClick={async () => {
                   await logout();
                   window.location.href = "/";
@@ -294,7 +294,7 @@ export default function ProfilePage() {
               </button>
             </div>
 
-            <div className="rounded-[2rem] bg-[#c3d0ff]/30 p-8">
+            <div className="rounded-[2rem] bg-[#0052d0]/30 p-8">
               <h5 className="mb-2 font-bold">Need help?</h5>
               <p className="mb-4 text-sm text-[#5c5b5b]">Our support team is available for students 24/7.</p>
               <button className="flex items-center gap-2 text-sm font-bold text-[#0052d0] hover:underline">

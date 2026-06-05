@@ -100,7 +100,7 @@ export function Nav() {
                 type="button"
                 onClick={() => setMenuOpen((current) => !current)}
               >
-                <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[#c3d0ff] bg-[#e4e2e1] shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+                <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[#0052d0] bg-[#e4e2e1] shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
                   <Image
                     alt={userDisplayName}
                     className="object-cover"
@@ -114,18 +114,18 @@ export function Nav() {
               <div
                 className={
                   menuOpen
-                    ? "absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#d9c08a] bg-[#171412] shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
-                    : "pointer-events-none absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#d9c08a] bg-[#171412] opacity-0 shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
+                    ? "absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#171412] shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
+                    : "pointer-events-none absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#171412] opacity-0 shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
                 }
                 role="menu"
               >
                 <div className="border-b border-[#8d7440]/40 px-5 py-4">
-                  <p className="font-display text-sm font-bold tracking-[0.16em] text-[#d9c08a]">BoilerSub</p>
+                  <p className="font-display text-sm font-bold tracking-[0.16em] text-[#0052d0]">BoilerSub</p>
                   <p className="mt-1 truncate text-sm text-[#f6efe1]/80">{userDisplayName}</p>
                 </div>
                 <div className="flex flex-col py-2">
                   <Link
-                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#d9c08a]"
+                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#0052d0]"
                     href="/profile"
                     role="menuitem"
                     onClick={() => setMenuOpen(false)}
@@ -133,7 +133,7 @@ export function Nav() {
                     Profile
                   </Link>
                   <Link
-                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#d9c08a]"
+                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#0052d0]"
                     href="/profile/listings"
                     role="menuitem"
                     onClick={() => setMenuOpen(false)}
@@ -141,7 +141,7 @@ export function Nav() {
                     My Listings
                   </Link>
                   <Link
-                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#d9c08a]"
+                    className="px-5 py-3 font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#0052d0]"
                     href="/chats"
                     role="menuitem"
                     onClick={() => setMenuOpen(false)}
@@ -149,7 +149,7 @@ export function Nav() {
                     Chat
                   </Link>
                   <button
-                    className="px-5 py-3 text-left font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#d9c08a]"
+                    className="px-5 py-3 text-left font-display text-sm font-semibold tracking-tight text-[#f6efe1] transition-colors hover:bg-[#2a221c] hover:text-[#0052d0]"
                     role="menuitem"
                     type="button"
                     onClick={async () => {
