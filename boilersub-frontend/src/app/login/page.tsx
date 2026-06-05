@@ -45,11 +45,11 @@ export default function LoginPage() {
               Join the most trusted marketplace at Purdue. Verified community members, secure subleases, and seamless housing transitions.
             </p>
             <div className="grid grid-cols-2 gap-4 pt-8">
-              <div className="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
+              <div className="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur-md">
                 <div className="mb-1 text-3xl font-display font-bold text-white">10k+</div>
                 <div className="text-sm uppercase tracking-wider text-[#eaf1ff]/70">Verified Students</div>
               </div>
-              <div className="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
+              <div className="rounded-lg border border-white/10 bg-white/10 p-6 backdrop-blur-md">
                 <div className="mb-1 text-3xl font-display font-bold text-white">500+</div>
                 <div className="text-sm uppercase tracking-wider text-[#eaf1ff]/70">Active Subleases</div>
               </div>
@@ -94,7 +94,7 @@ export default function LoginPage() {
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#5c5b5b]">@</div>
                 <input
-                  className="block w-full rounded-xl border-none bg-[#dfdcdc] py-4 pl-12 pr-4 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
+                  className="block w-full rounded-lg border-none bg-[#dfdcdc] py-4 pl-12 pr-4 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
                   id="email"
                   name="email"
                   placeholder="example@purdue.edu"
@@ -118,7 +118,7 @@ export default function LoginPage() {
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-[#5c5b5b]">•</div>
                 <input
-                  className="block w-full rounded-xl border-none bg-[#dfdcdc] py-4 pl-12 pr-12 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
+                  className="block w-full rounded-lg border-none bg-[#dfdcdc] py-4 pl-12 pr-12 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
                   id="password"
                   name="password"
                   placeholder="••••••••"
@@ -138,7 +138,7 @@ export default function LoginPage() {
             </div>
 
             <button
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0052d0] py-5 font-display font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] hover:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0052d0] py-5 font-display font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] hover:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
               disabled={busy}
               type="submit"
             >

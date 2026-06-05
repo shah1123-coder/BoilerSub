@@ -41,7 +41,7 @@ export function OtpInput({
               refs.current[index - 1]?.focus();
             }
           }}
-          className="h-14 w-12 rounded-2xl border border-slate-200 bg-white text-center text-xl font-semibold outline-none ring-brand-blue/20 transition focus:border-brand-blue focus:ring-2 sm:w-14"
+          className="h-14 w-12 rounded-lg border border-slate-200 bg-white text-center text-xl font-semibold outline-none ring-brand-blue/20 transition focus:border-brand-blue focus:ring-2 sm:w-14"
         />
       ))}
     </div>

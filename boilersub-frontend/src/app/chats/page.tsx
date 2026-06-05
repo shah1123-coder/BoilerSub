@@ -52,7 +52,7 @@ export default function ChatsPage() {
       </div>
 
       {error ? (
-        <div className="mb-4 rounded-xl bg-[#ffe9df] px-4 py-3 text-sm text-[#8e2f12]">
+        <div className="mb-4 rounded-lg bg-[#ffe9df] px-4 py-3 text-sm text-[#8e2f12]">
           {error}
         </div>
       ) : null}

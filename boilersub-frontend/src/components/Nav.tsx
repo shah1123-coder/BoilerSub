@@ -114,8 +114,8 @@ export function Nav() {
               <div
                 className={
                   menuOpen
-                    ? "absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#171412] shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
-                    : "pointer-events-none absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#171412] opacity-0 shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
+                    ? "absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-lg border border-[#0052d0] bg-[#171412] shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
+                    : "pointer-events-none absolute right-0 top-[calc(100%+0.75rem)] w-56 overflow-hidden rounded-lg border border-[#0052d0] bg-[#171412] opacity-0 shadow-[0_18px_48px_rgba(0,0,0,0.18)]"
                 }
                 role="menu"
               >

@@ -282,7 +282,7 @@ export default function ListingsPage() {
                   Join verified Boilermakers
                 </p>
                 <Link
-                  className="rounded-xl bg-[#0052d0] px-6 py-2.5 text-sm font-bold text-[#f1f2ff] shadow-lg transition-all hover:bg-[#0047b7]"
+                  className="rounded-lg bg-[#0052d0] px-6 py-2.5 text-sm font-bold text-[#f1f2ff] shadow-lg transition-all hover:bg-[#0047b7]"
                   href="/listings/new"
                 >
                   Start Listing
@@ -293,17 +293,17 @@ export default function ListingsPage() {
 
           <nav className="mt-12 flex items-center justify-center gap-2 pb-12">
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f3f0ef] text-[#5c5b5b] disabled:opacity-50"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#f3f0ef] text-[#5c5b5b] disabled:opacity-50"
               disabled={offset === 0}
               onClick={() => setOffset((value) => Math.max(0, value - limit))}
             >
               ‹
             </button>
-            <button className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0052d0] text-sm font-bold text-[#f1f2ff]">
+            <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0052d0] text-sm font-bold text-[#f1f2ff]">
               {Math.floor(offset / limit) + 1}
             </button>
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#5c5b5b] disabled:opacity-50"
+              className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#5c5b5b] disabled:opacity-50"
               disabled={rows.length < limit}
               onClick={() => setOffset((value) => value + limit)}
             >

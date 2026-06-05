@@ -81,7 +81,7 @@ export default function ForgotPasswordPage() {
                 Purdue Email Address
               </label>
               <input
-                className="w-full rounded-xl border-0 bg-[#dfdcdc] px-5 py-4 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
+                className="w-full rounded-lg border-0 bg-[#dfdcdc] px-5 py-4 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
                 id="email"
                 name="email"
                 placeholder="username@purdue.edu"
@@ -93,7 +93,7 @@ export default function ForgotPasswordPage() {
             </div>
 
             <button
-              className="w-full rounded-xl bg-[#0052d0] py-4 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-lg bg-[#0052d0] py-4 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] disabled:cursor-not-allowed disabled:opacity-60"
               disabled={busy}
               type="submit"
             >

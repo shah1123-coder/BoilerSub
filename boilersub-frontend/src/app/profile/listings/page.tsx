@@ -57,7 +57,7 @@ function ListingStatusBadge({ startDate, endDate }: { startDate: string; endDate
 
 function StatCard({ label, value, accent }: { label: string; value: string; accent: string }) {
   return (
-    <div className="rounded-[2rem] border border-stone-200/60 bg-white/90 p-8 text-center shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
+    <div className="rounded-[1.5rem] border border-stone-200/60 bg-white/90 p-8 text-center shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
       <p className="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-stone-500">{label}</p>
       <p className={`mt-3 font-display text-5xl font-black tracking-[-0.06em] ${accent}`}>{value}</p>
     </div>
@@ -122,7 +122,7 @@ export default function ProfileListingsPage() {
             </p>
           </div>
           <Link
-            className={`${buttonClassName()} flex items-center gap-2 rounded-2xl px-8 py-4 text-base shadow-[0_20px_40px_rgba(0,82,208,0.2)]`}
+            className={`${buttonClassName()} flex items-center gap-2 rounded-lg px-8 py-4 text-base shadow-[0_20px_40px_rgba(0,82,208,0.2)]`}
             href="/listings/new"
           >
             <span aria-hidden="true" className="text-lg leading-none">
@@ -144,11 +144,11 @@ export default function ProfileListingsPage() {
         <section className="grid gap-10 xl:grid-cols-12">
           <div className="xl:col-span-8">
             {loading ? (
-              <div className="rounded-[2rem] border border-stone-200/60 bg-white/85 p-10 text-sm text-stone-600 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
+              <div className="rounded-[1.5rem] border border-stone-200/60 bg-white/85 p-10 text-sm text-stone-600 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
                 Loading your listings...
               </div>
             ) : mine.length === 0 ? (
-              <div className="rounded-[2rem] border-2 border-dashed border-stone-300 bg-white/65 p-16 text-center shadow-[0_12px_32px_rgba(0,0,0,0.03)]">
+              <div className="rounded-[1.5rem] border-2 border-dashed border-stone-300 bg-white/65 p-16 text-center shadow-[0_12px_32px_rgba(0,0,0,0.03)]">
                 <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#eaf1ff] text-4xl text-[#0052d0]">
                   <span aria-hidden="true">⌂</span>
                 </div>
@@ -165,7 +165,7 @@ export default function ProfileListingsPage() {
                 {mine.map((listing) => (
                   <article
                     key={listing.id}
-                    className="group overflow-hidden rounded-[2rem] border border-stone-200/60 bg-white/92 shadow-[0_12px_32px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(0,0,0,0.08)]"
+                    className="group overflow-hidden rounded-[1.5rem] border border-stone-200/60 bg-white/92 shadow-[0_12px_32px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(0,0,0,0.08)]"
                   >
                     <div className="relative h-52 overflow-hidden bg-[linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]">
                       {filterRenderableImages(listing.images)[0] ? (
@@ -212,13 +212,13 @@ export default function ProfileListingsPage() {
 
                       <div className="mt-8 flex items-center justify-between border-t border-stone-200 pt-6">
                         <Link
-                          className="rounded-xl px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5"
+                          className="rounded-lg px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5"
                           href={`/listings/${listing.id}/edit`}
                         >
                           Edit
                         </Link>
                         <button
-                          className="rounded-xl px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="rounded-lg px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5 disabled:cursor-not-allowed disabled:opacity-50"
                           disabled={deletingId === listing.id}
                           type="button"
                           onClick={() => void handleDelete(listing.id, listing.title)}
@@ -234,7 +234,7 @@ export default function ProfileListingsPage() {
           </div>
 
           <aside className="space-y-8 xl:col-span-4">
-            <div className="rounded-[2rem] border border-stone-200/60 bg-white/92 p-8 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
+            <div className="rounded-[1.5rem] border border-stone-200/60 bg-white/92 p-8 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
               <h2 className="flex items-center gap-3 font-display text-2xl font-black tracking-[-0.05em] text-stone-900">
                 <span className="text-[#0052d0]">◌</span>
                 Performance Stats
@@ -284,7 +284,7 @@ export default function ProfileListingsPage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-stone-200/60 bg-[linear-gradient(135deg,#fff8ea_0%,#f3f0ef_100%)] p-8 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
+            <div className="rounded-[1.5rem] border border-stone-200/60 bg-[linear-gradient(135deg,#fff8ea_0%,#f3f0ef_100%)] p-8 shadow-[0_12px_32px_rgba(0,0,0,0.04)]">
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-stone-500">Quick Actions</p>
               <h2 className="mt-3 font-display text-3xl font-black tracking-[-0.05em] text-stone-900">Keep your dashboard moving.</h2>
               <p className="mt-3 text-sm leading-7 text-stone-600">
@@ -296,7 +296,7 @@ export default function ProfileListingsPage() {
                   Create Listing
                 </Link>
                 <Link
-                  className="rounded-2xl border border-stone-300 bg-white px-6 py-3 text-center font-display text-sm font-bold text-stone-900 transition-colors hover:bg-stone-100"
+                  className="rounded-lg border border-stone-300 bg-white px-6 py-3 text-center font-display text-sm font-bold text-stone-900 transition-colors hover:bg-stone-100"
                   href="/listings"
                 >
                   View Marketplace

@@ -172,7 +172,7 @@ export function AddressAutocompleteInput({
         }}
       />
       {open ? (
-        <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-xl border border-[#afadac]/35 bg-white shadow-xl">
+        <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-lg border border-[#afadac]/35 bg-white shadow-xl">
           <ul className="max-h-64 overflow-y-auto py-1">
             {suggestions.map((suggestion, index) => (
               <li key={`${suggestion.id}-${index}`}>

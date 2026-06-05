@@ -44,7 +44,7 @@ export default function SignupPage() {
           </h2>
 
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+            <div className="flex items-center gap-4 rounded-lg border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>✓</span>
               </div>
@@ -53,7 +53,7 @@ export default function SignupPage() {
                 <p className="text-xs text-[#eaf1ff]/70">Exclusively for @purdue.edu emails.</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+            <div className="flex items-center gap-4 rounded-lg border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>◉</span>
               </div>
@@ -62,7 +62,7 @@ export default function SignupPage() {
                 <p className="text-xs text-[#eaf1ff]/70">Join 5,000+ Boilermakers today.</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-xl border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
+            <div className="flex items-center gap-4 rounded-lg border border-[#eaf1ff]/10 bg-white/10 p-4 backdrop-blur-md transition-all hover:bg-white/20">
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#eaf1ff]/30 text-[#eaf1ff]">
                 <span>🔒</span>
               </div>
@@ -141,7 +141,7 @@ export default function SignupPage() {
               </label>
               <div className="group relative">
                 <input
-                  className="h-14 w-full rounded-xl border-0 bg-[#f3f0ef] px-5 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
+                  className="h-14 w-full rounded-lg border-0 bg-[#f3f0ef] px-5 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
                   id="email"
                   placeholder="student@purdue.edu"
                   type="email"
@@ -161,7 +161,7 @@ export default function SignupPage() {
               </label>
               <div className="group relative">
                 <input
-                  className="h-14 w-full rounded-xl border-0 bg-[#f3f0ef] px-5 pr-12 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
+                  className="h-14 w-full rounded-lg border-0 bg-[#f3f0ef] px-5 pr-12 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
                   id="password"
                   placeholder="••••••••"
                   type={showPassword ? "text" : "password"}
@@ -191,7 +191,7 @@ export default function SignupPage() {
               </label>
               <div className="group relative">
                 <input
-                  className="h-14 w-full rounded-xl border-0 bg-[#f3f0ef] px-5 pr-12 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
+                  className="h-14 w-full rounded-lg border-0 bg-[#f3f0ef] px-5 pr-12 font-body text-[#2f2f2e] placeholder:text-[#afadac] transition-all duration-300 focus:bg-[#eae7e7] focus:ring-2 focus:ring-[#0052d0]/20"
                   id="confirm_password"
                   placeholder="••••••••"
                   type={showConfirm ? "text" : "password"}
@@ -232,7 +232,7 @@ export default function SignupPage() {
 
             <div className="space-y-6 pt-4">
               <button
-                className="flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-[#0052d0] text-lg font-display font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_16px_40px_rgba(0,82,208,0.3)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+                className="flex h-16 w-full items-center justify-center gap-3 rounded-lg bg-[#0052d0] text-lg font-display font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_16px_40px_rgba(0,82,208,0.3)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
                 disabled={busy}
                 type="submit"
               >

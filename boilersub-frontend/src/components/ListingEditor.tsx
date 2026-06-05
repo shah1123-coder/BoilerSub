@@ -210,7 +210,7 @@ export function ListingEditor({
                     Listing Title
                   </label>
                   <Input
-                    className="rounded-xl border-none bg-[#dfdcdc] px-6 py-4 text-lg font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                    className="rounded-lg border-none bg-[#dfdcdc] px-6 py-4 text-lg font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                     id="title"
                     required
                     value={form.title}
@@ -223,7 +223,7 @@ export function ListingEditor({
                     Property Description
                   </label>
                   <Textarea
-                    className="min-h-40 rounded-xl border-none bg-[#dfdcdc] px-6 py-4 leading-7 text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                    className="min-h-40 rounded-lg border-none bg-[#dfdcdc] px-6 py-4 leading-7 text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                     id="description"
                     value={form.description}
                     onChange={(event) => setForm((current) => ({ ...current, description: event.target.value }))}
@@ -242,7 +242,7 @@ export function ListingEditor({
                   <div className="relative">
                     <span className="absolute left-6 top-1/2 -translate-y-1/2 font-bold text-stone-500">$</span>
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] py-4 pl-10 pr-6 text-xl font-black text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] py-4 pl-10 pr-6 text-xl font-black text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="price"
                       min="0"
                       required
@@ -260,7 +260,7 @@ export function ListingEditor({
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="start_date"
                       required
                       type="date"
@@ -268,7 +268,7 @@ export function ListingEditor({
                       onChange={(event) => setForm((current) => ({ ...current, start_date: event.target.value }))}
                     />
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="end_date"
                       required
                       type="date"
@@ -288,7 +288,7 @@ export function ListingEditor({
                     Full Address
                   </label>
                   <AddressAutocompleteInput
-                    className="rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                    className="rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                     id="address"
                     value={form.address}
                     onValueChange={(value) => setForm((current) => ({ ...current, address: value }))}
@@ -300,7 +300,7 @@ export function ListingEditor({
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="bedrooms"
                       min="0"
                       step="1"
@@ -309,7 +309,7 @@ export function ListingEditor({
                       onChange={(event) => setForm((current) => ({ ...current, bedrooms: event.target.value }))}
                     />
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="bathrooms"
                       min="0"
                       step="0.5"
@@ -318,7 +318,7 @@ export function ListingEditor({
                       onChange={(event) => setForm((current) => ({ ...current, bathrooms: event.target.value }))}
                     />
                     <Input
-                      className="rounded-xl border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
+                      className="rounded-lg border-none bg-[#dfdcdc] px-4 py-4 font-medium text-stone-900 focus:ring-2 focus:ring-[#0052d0]"
                       id="distance"
                       min="0"
                       step="0.1"
@@ -370,14 +370,14 @@ export function ListingEditor({
                 <span className="text-xs font-bold uppercase tracking-[0.18em] text-stone-500">JPEG only, up to {MAX_LISTING_IMAGES}</span>
               </div>
               <div className="grid gap-4 md:grid-cols-[220px_1fr]">
-                <div className="rounded-2xl border border-[#0052d0] bg-white p-3">
+                <div className="rounded-lg border border-[#0052d0] bg-white p-3">
                   {qrImageUrl ? (
-                    <img alt="Scan to open phone camera capture" className="w-full rounded-xl" src={qrImageUrl} />
+                    <img alt="Scan to open phone camera capture" className="w-full rounded-lg" src={qrImageUrl} />
                   ) : (
-                    <div className="flex aspect-square items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
+                    <div className="flex aspect-square items-center justify-center rounded-lg bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
                   )}
                 </div>
-                <div className="rounded-2xl border border-[#d4d7dd] bg-[#f7f8fb] p-4 text-sm text-slate-600">
+                <div className="rounded-lg border border-[#d4d7dd] bg-[#f7f8fb] p-4 text-sm text-slate-600">
                   <p className="font-semibold text-slate-800">Phone camera upload only</p>
                   <p className="mt-1">Scan the QR code to capture images live from your phone. Laptop file upload is disabled.</p>
                   {phoneCaptureUrl ? (
@@ -392,7 +392,7 @@ export function ListingEditor({
               {form.images.length ? (
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                   {form.images.map((image, index) => (
-                    <div key={`${index}-${image.slice(0, 32)}`} className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-stone-200">
+                    <div key={`${index}-${image.slice(0, 32)}`} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-stone-200">
                       <Image
                         alt={`Listing upload ${index + 1}`}
                         className="aspect-[4/3] object-cover"
@@ -434,7 +434,7 @@ export function ListingEditor({
                 ) : null}
               </div>
               {panoramaPreviewImage ? (
-                <div className="relative aspect-[2/1] overflow-hidden rounded-2xl bg-stone-200">
+                <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-stone-200">
                   <Image
                     alt="Panorama upload preview"
                     className="object-cover"
@@ -451,7 +451,7 @@ export function ListingEditor({
 
             <div className="flex flex-col gap-6 border-t border-stone-200 pt-8 sm:flex-row sm:items-center">
               <Button
-                className="w-full rounded-xl px-10 py-5 text-lg shadow-[0_20px_40px_rgba(0,82,208,0.2)] sm:w-auto"
+                className="w-full rounded-lg px-10 py-5 text-lg shadow-[0_20px_40px_rgba(0,82,208,0.2)] sm:w-auto"
                 disabled={busy}
                 type="submit"
               >
@@ -468,7 +468,7 @@ export function ListingEditor({
 
               {onDelete ? (
                 <button
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 font-semibold text-[#0052d0] transition-colors hover:bg-[#0052d0]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-[#0052d0] transition-colors hover:bg-[#0052d0]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                   disabled={deleting || busy}
                   type="button"
                   onClick={async () => {
@@ -495,8 +495,8 @@ export function ListingEditor({
           </form>
 
           <aside className="space-y-8 lg:sticky lg:top-28">
-            <div className="group rounded-[2rem] bg-white/92 p-6 shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
-              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl bg-[linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]">
+            <div className="group rounded-[1.5rem] bg-white/92 p-6 shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+              <div className="relative mb-6 h-48 overflow-hidden rounded-lg bg-[linear-gradient(135deg,#eaf1ff_0%,#eaf1ff_45%,#eaf1ff_100%)]">
                 {previewImage ? (
                   <Image
                     alt={payload.title || "Listing preview"}
@@ -512,9 +512,9 @@ export function ListingEditor({
                 </div>
               </div>
               {panoramaPreviewImage ? (
-                <div className="mb-6 overflow-hidden rounded-2xl border border-[#0052d0] bg-[#eff3ff] p-3">
+                <div className="mb-6 overflow-hidden rounded-lg border border-[#0052d0] bg-[#eff3ff] p-3">
                   <p className="mb-2 text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#0052d0]">360 Preview Ready</p>
-                  <div className="relative aspect-[2/1] overflow-hidden rounded-xl">
+                  <div className="relative aspect-[2/1] overflow-hidden rounded-lg">
                     <Image
                       alt="Panorama preview"
                       className="object-cover"
@@ -542,9 +542,9 @@ export function ListingEditor({
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-[#eaf1ff]/40 bg-[#eaf1ff]/25 p-8">
+            <div className="rounded-[1.5rem] border border-[#eaf1ff]/40 bg-[#eaf1ff]/25 p-8">
               <div className="flex items-start gap-4">
-                <div className="rounded-xl bg-[#0052d0] p-2 text-white">
+                <div className="rounded-lg bg-[#0052d0] p-2 text-white">
                   <span aria-hidden="true">↻</span>
                 </div>
                 <div>
@@ -556,7 +556,7 @@ export function ListingEditor({
               </div>
             </div>
 
-            <div className="rounded-[2rem] bg-stone-100/80 p-8">
+            <div className="rounded-[1.5rem] bg-stone-100/80 p-8">
               <h4 className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#0052d0]">Listing Owner</h4>
               <div className="mt-4 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-stone-200 text-lg font-black text-stone-700">
@@ -730,14 +730,14 @@ export function ListingEditor({
               Listing images
             </label>
             <div className="mt-1 grid gap-4 md:grid-cols-[220px_1fr]">
-              <div className="rounded-2xl border border-slate-200 bg-white p-3">
+              <div className="rounded-lg border border-slate-200 bg-white p-3">
                 {qrImageUrl ? (
-                  <img alt="Scan to open phone camera capture" className="w-full rounded-xl" src={qrImageUrl} />
+                  <img alt="Scan to open phone camera capture" className="w-full rounded-lg" src={qrImageUrl} />
                 ) : (
-                  <div className="flex aspect-square items-center justify-center rounded-xl bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
+                  <div className="flex aspect-square items-center justify-center rounded-lg bg-slate-100 text-xs text-slate-500">Preparing QR…</div>
                 )}
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
                 <p className="font-semibold text-slate-800">Phone camera upload only</p>
                 <p className="mt-1">Scan the QR code and capture photos live. Laptop file upload is disabled.</p>
                 {phoneCaptureUrl ? (
@@ -751,7 +751,7 @@ export function ListingEditor({
             {form.images.length ? (
               <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3">
                 {form.images.map((image, index) => (
-                  <div key={`${index}-${image.slice(0, 32)}`} className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-100">
+                  <div key={`${index}-${image.slice(0, 32)}`} className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
                     <Image
                       alt={`Listing upload ${index + 1}`}
                       className="object-cover"
@@ -793,7 +793,7 @@ export function ListingEditor({
             </div>
             <p className="mt-2 text-xs text-slate-500">Select one synced phone capture as the panorama source for View 3D.</p>
             {form.panorama_image ? (
-              <div className="mt-4 relative aspect-[2/1] overflow-hidden rounded-2xl bg-slate-100">
+              <div className="mt-4 relative aspect-[2/1] overflow-hidden rounded-lg bg-slate-100">
                 <Image
                   alt="Panorama upload preview"
                   className="object-cover"

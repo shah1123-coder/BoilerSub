@@ -22,7 +22,7 @@ export default function ResetPasswordPage() {
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-3xl items-center px-6 py-14">
-      <section className="w-full rounded-3xl border border-[#e4e2e1] bg-[#f9f6f5]/90 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:p-12">
+      <section className="w-full rounded-lg border border-[#e4e2e1] bg-[#f9f6f5]/90 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:p-12">
         <Link className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#5c5b5b] hover:text-[#0052d0]" href="/login">
           ← Back to Log In
         </Link>
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
             </label>
             <div className="relative">
               <input
-                className="w-full rounded-xl border-0 bg-[#dfdcdc] px-5 py-4 pr-16 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
+                className="w-full rounded-lg border-0 bg-[#dfdcdc] px-5 py-4 pr-16 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
                 id="password"
                 name="password"
                 placeholder="••••••••"
@@ -113,7 +113,7 @@ export default function ResetPasswordPage() {
             </label>
             <div className="relative">
               <input
-                className="w-full rounded-xl border-0 bg-[#dfdcdc] px-5 py-4 pr-16 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
+                className="w-full rounded-lg border-0 bg-[#dfdcdc] px-5 py-4 pr-16 text-[#2f2f2e] placeholder:text-[#787676] focus:ring-2 focus:ring-[#0052d0] focus:ring-offset-2"
                 id="confirm"
                 name="confirm"
                 placeholder="••••••••"
@@ -132,12 +132,12 @@ export default function ResetPasswordPage() {
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#f3f0ef] p-4 text-sm text-[#5c5b5b]">
+          <div className="rounded-lg bg-[#f3f0ef] p-4 text-sm text-[#5c5b5b]">
             Password must be at least 8 characters and should include letters and numbers.
           </div>
 
           <button
-            className="w-full rounded-xl bg-[#0052d0] py-4 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-lg bg-[#0052d0] py-4 font-display text-lg font-bold text-[#f1f2ff] shadow-[0px_12px_32px_rgba(0,82,208,0.2)] transition-all hover:bg-[#0047b7] disabled:cursor-not-allowed disabled:opacity-60"
             disabled={busy}
             type="submit"
           >

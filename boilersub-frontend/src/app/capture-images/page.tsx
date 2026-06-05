@@ -124,21 +124,21 @@ export default function CaptureImagesPage() {
       {message ? <Toast kind="error" message={message} /> : null}
       {successMessage ? <Toast kind="success" message={successMessage} /> : null}
 
-      <section className="overflow-hidden rounded-2xl bg-black shadow-xl">
+      <section className="overflow-hidden rounded-lg bg-black shadow-xl">
         <video ref={videoRef} autoPlay playsInline muted className="aspect-[3/4] w-full bg-black object-cover md:aspect-video" />
       </section>
       <canvas ref={canvasRef} className="hidden" />
 
       <div className="flex flex-wrap gap-3">
         <button
-          className="rounded-xl bg-[#0052d0] px-6 py-3 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/30 transition-all hover:bg-[#0047b7] active:scale-[0.98]"
+          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/30 transition-all hover:bg-[#0047b7] active:scale-[0.98]"
           type="button"
           onClick={takePhoto}
         >
           Take Photo
         </button>
         <button
-          className="rounded-xl bg-[#0052d0] px-6 py-3 font-bold text-[#eaf1ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#eaf1ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
           disabled={busy}
           type="button"
           onClick={() => void uploadPhotos()}
@@ -152,7 +152,7 @@ export default function CaptureImagesPage() {
         {captured.length ? (
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {captured.map((image, index) => (
-              <div key={`${index}-${image.slice(0, 32)}`} className="relative overflow-hidden rounded-xl bg-[#e4e2e1]">
+              <div key={`${index}-${image.slice(0, 32)}`} className="relative overflow-hidden rounded-lg bg-[#e4e2e1]">
                 <img alt={`Captured ${index + 1}`} className="aspect-[4/3] w-full object-cover" src={image} />
                 <button
                   className="absolute right-2 top-2 rounded-full bg-black/65 px-2 py-1 text-xs font-bold text-white"

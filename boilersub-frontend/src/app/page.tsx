@@ -73,7 +73,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="glass-panel mx-auto flex max-w-4xl flex-col items-center gap-2 rounded-2xl p-2 shadow-2xl md:flex-row">
+            <div className="glass-panel mx-auto flex max-w-4xl flex-col items-center gap-2 rounded-lg p-2 shadow-2xl md:flex-row">
               <div className="grid w-full flex-1 grid-cols-1 gap-2 px-4 md:grid-cols-3">
                 <div className="flex flex-col items-start py-2">
                   <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-[#0052d0]">Location</span>
@@ -110,7 +110,7 @@ export default function HomePage() {
                 </div>
               </div>
               <Link
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0052d0] px-10 py-4 font-bold text-white shadow-lg transition-all hover:bg-[#0047b7] active:scale-95 md:w-auto"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0052d0] px-10 py-4 font-bold text-white shadow-lg transition-all hover:bg-[#0047b7] active:scale-95 md:w-auto"
                 href="/listings"
               >
                 <span>⌕</span>

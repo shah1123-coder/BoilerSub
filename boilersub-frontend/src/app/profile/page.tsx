@@ -53,18 +53,18 @@ export default function ProfilePage() {
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="space-y-8 md:col-span-8">
-            <section className="relative overflow-hidden rounded-[2rem] bg-white p-8 shadow-[0px_12px_32px_rgba(0,0,0,0.04)]">
+            <section className="relative overflow-hidden rounded-[1.5rem] bg-white p-8 shadow-[0px_12px_32px_rgba(0,0,0,0.04)]">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#0052d0]/5 blur-3xl" />
               <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row md:items-start">
                 <div className="relative">
                   <Image
                     alt={user?.full_name ?? user?.email ?? "Profile avatar"}
-                    className="h-40 w-40 rounded-[2.5rem] object-cover shadow-xl"
+                    className="h-40 w-40 rounded-[1.75rem] object-cover shadow-xl"
                     height={160}
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHJpE5p1_29TQDg4BICkX9VjBGcxiqPZJ_XGa_zp5QYrx1g1Vza-z_nNb0cB5BuwrDTY2ETh9uCEnDXqSYKoG2e-5C2KXWQVCeqRM99j-y-FjP4yIit3EHn3DwzaZVx19_q5hdNImeEXZwa6aB-pQExNqS_7AQ6VdoqymXh7hwu2vHJEDK1onPT3B-5YBTZ7-88mmY7TgCfOdfMofSdOphRB-jnyirdcMyu7Gqh_qn4b6M5v1NrrflUvnN6G2kkVsSdukWxx1TeNQ"
                     width={160}
                   />
-                  <div className="absolute -bottom-2 -right-2 rounded-2xl bg-white p-2 shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 rounded-lg bg-white p-2 shadow-lg">
                     <span className="text-2xl text-[#0052d0]">✓</span>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export default function ProfilePage() {
             </section>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="space-y-6 rounded-[2rem] bg-[#f3f0ef] p-8">
+              <div className="space-y-6 rounded-[1.5rem] bg-[#f3f0ef] p-8">
                 <h3 className="mb-4 font-display text-lg font-bold">Security & Verification</h3>
                 <div className="space-y-4">
                   <div className="flex flex-col">
@@ -115,7 +115,7 @@ export default function ProfilePage() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between rounded-[2rem] bg-[#f3f0ef] p-8">
+              <div className="flex flex-col justify-between rounded-[1.5rem] bg-[#f3f0ef] p-8">
                 <div>
                   <h3 className="mb-2 font-display text-lg font-bold">Marketplace Activity</h3>
                   <p className="text-sm text-[#5c5b5b]">Your current presence on BoilerSub.</p>
@@ -127,7 +127,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <section className="space-y-8 rounded-[2rem] bg-[#f3f0ef] p-8">
+            <section className="space-y-8 rounded-[1.5rem] bg-[#f3f0ef] p-8">
               <h3 className="font-display text-lg font-bold">Profile Details</h3>
               <form
                 className="space-y-6"
@@ -148,7 +148,7 @@ export default function ProfilePage() {
                   <div className="group">
                     <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">First Name</label>
                     <input
-                      className="w-full rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                      className="w-full rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                       type="text"
                       value={firstName}
                       onChange={(event) => setFirstName(event.target.value)}
@@ -157,7 +157,7 @@ export default function ProfilePage() {
                   <div className="group">
                     <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">Last Name</label>
                     <input
-                      className="w-full rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                      className="w-full rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                       type="text"
                       value={lastName}
                       onChange={(event) => setLastName(event.target.value)}
@@ -167,14 +167,14 @@ export default function ProfilePage() {
                 <div className="group">
                   <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">Bio</label>
                   <textarea
-                    className="w-full resize-none rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                    className="w-full resize-none rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                     rows={4}
                     value={bio}
                     onChange={(event) => setBio(event.target.value)}
                   />
                 </div>
                 <div className="pt-4">
-                  <button className="flex items-center gap-3 rounded-xl bg-[#0052d0] px-8 py-4 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:bg-[#0047b7]">
+                  <button className="flex items-center gap-3 rounded-lg bg-[#0052d0] px-8 py-4 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:bg-[#0047b7]">
                     <span>Save Changes</span>
                     <span>💾</span>
                   </button>
@@ -182,7 +182,7 @@ export default function ProfilePage() {
               </form>
             </section>
 
-            <section className="space-y-8 rounded-[2rem] bg-[#f3f0ef] p-8">
+            <section className="space-y-8 rounded-[1.5rem] bg-[#f3f0ef] p-8">
               <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
                 <div>
                   <h3 className="font-display text-lg font-bold">Change Password</h3>
@@ -225,7 +225,7 @@ export default function ProfilePage() {
                 <div className="group">
                   <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">Current Password</label>
                   <input
-                    className="w-full rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                    className="w-full rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                     type="password"
                     value={currentPassword}
                     onChange={(event) => setCurrentPassword(event.target.value)}
@@ -235,7 +235,7 @@ export default function ProfilePage() {
                   <div className="group">
                     <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">New Password</label>
                     <input
-                      className="w-full rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                      className="w-full rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                       type="password"
                       value={newPassword}
                       onChange={(event) => setNewPassword(event.target.value)}
@@ -244,7 +244,7 @@ export default function ProfilePage() {
                   <div className="group">
                     <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-[#5c5b5b]">Confirm New Password</label>
                     <input
-                      className="w-full rounded-xl border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
+                      className="w-full rounded-lg border-none bg-[#dfdcdc] px-6 py-4 font-medium focus:ring-2 focus:ring-[#0052d0]/20"
                       type="password"
                       value={confirmPassword}
                       onChange={(event) => setConfirmPassword(event.target.value)}
@@ -252,7 +252,7 @@ export default function ProfilePage() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <button className="flex items-center gap-3 rounded-xl bg-[#2f2f2e] px-8 py-4 font-bold text-[#f9f7f3] shadow-lg transition-all hover:bg-[#171717]">
+                  <button className="flex items-center gap-3 rounded-lg bg-[#2f2f2e] px-8 py-4 font-bold text-[#f9f7f3] shadow-lg transition-all hover:bg-[#171717]">
                     <span>Update Password</span>
                     <span>🔐</span>
                   </button>
@@ -262,7 +262,7 @@ export default function ProfilePage() {
           </div>
 
           <aside className="space-y-6 md:col-span-4">
-            <div className="rounded-[2rem] border border-[#0052d0]/10 bg-[#0052d0]/5 p-8">
+            <div className="rounded-[1.5rem] border border-[#0052d0]/10 bg-[#0052d0]/5 p-8">
               <div className="text-4xl text-[#0052d0]">🛡</div>
               <h4 className="mb-2 mt-4 font-display text-xl font-bold text-[#0052d0]">Boiler Trust</h4>
               <p className="text-sm leading-relaxed text-[#5c5b5b]">
@@ -270,20 +270,20 @@ export default function ProfilePage() {
               </p>
             </div>
 
-            <div className="space-y-2 rounded-[2rem] bg-[#f3f0ef] p-5">
-              <Link className="group flex items-center gap-4 rounded-2xl p-4 text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]" href="/profile/listings">
+            <div className="space-y-2 rounded-[1.5rem] bg-[#f3f0ef] p-5">
+              <Link className="group flex items-center gap-4 rounded-lg p-4 text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]" href="/profile/listings">
                 <span className="text-[#0052d0]">☰</span>
                 <span className="font-bold">My Listings</span>
                 <span className="ml-auto text-sm opacity-30">›</span>
               </Link>
-              <button className="group flex w-full items-center gap-4 rounded-2xl p-4 text-left text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]">
+              <button className="group flex w-full items-center gap-4 rounded-lg p-4 text-left text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]">
                 <span className="text-[#0052d0]">⚙</span>
                 <span className="font-bold">Account Settings</span>
                 <span className="ml-auto text-sm opacity-30">›</span>
               </button>
               <div className="mx-4 my-1 h-px bg-[#dfdcdc]" />
               <button
-                className="group flex w-full items-center gap-4 rounded-2xl p-4 text-left text-[#0052d0] transition-all hover:bg-[#f95630]/10"
+                className="group flex w-full items-center gap-4 rounded-lg p-4 text-left text-[#0052d0] transition-all hover:bg-[#f95630]/10"
                 onClick={async () => {
                   await logout();
                   window.location.href = "/";
@@ -294,7 +294,7 @@ export default function ProfilePage() {
               </button>
             </div>
 
-            <div className="rounded-[2rem] bg-[#0052d0]/30 p-8">
+            <div className="rounded-[1.5rem] bg-[#0052d0]/30 p-8">
               <h5 className="mb-2 font-bold">Need help?</h5>
               <p className="mb-4 text-sm text-[#5c5b5b]">Our support team is available for students 24/7.</p>
               <button className="flex items-center gap-2 text-sm font-bold text-[#0052d0] hover:underline">

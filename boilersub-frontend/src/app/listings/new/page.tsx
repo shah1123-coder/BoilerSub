@@ -172,13 +172,13 @@ export default function NewListingPage() {
 
               <section className="space-y-4">
                 <label className="block text-sm font-bold uppercase tracking-widest text-[#5c5b5b]/70">Gallery (Camera Only)</label>
-                <div className="rounded-2xl border border-[#afadac]/25 bg-[#f3f0ef] p-5 md:p-7">
+                <div className="rounded-lg border border-[#afadac]/25 bg-[#f3f0ef] p-5 md:p-7">
                   <div className="grid items-center gap-6 md:grid-cols-[280px_1fr]">
                     <div className="mx-auto w-full max-w-[260px]">
                       {sessionReady && qrImageUrl ? (
-                        <img alt="Scan to open phone camera capture" className="w-full rounded-xl bg-white p-2 shadow-sm" src={qrImageUrl} />
+                        <img alt="Scan to open phone camera capture" className="w-full rounded-lg bg-white p-2 shadow-sm" src={qrImageUrl} />
                       ) : (
-                        <div className="aspect-square w-full animate-pulse rounded-xl bg-[#dfdcdc]" />
+                        <div className="aspect-square w-full animate-pulse rounded-lg bg-[#dfdcdc]" />
                       )}
                     </div>
                     <div className="space-y-3">
@@ -189,16 +189,16 @@ export default function NewListingPage() {
                       <div className="flex flex-wrap gap-3">
                         {phoneCaptureUrl ? (
                           <Link
-                            className="rounded-xl bg-[#0052d0] px-4 py-2.5 text-sm font-bold text-[#f1f2ff] transition hover:bg-[#0047b7]"
+                            className="rounded-lg bg-[#0052d0] px-4 py-2.5 text-sm font-bold text-[#f1f2ff] transition hover:bg-[#0047b7]"
                             href={phoneCaptureUrl}
                             target="_blank"
                           >
                             Open Camera Link
                           </Link>
                         ) : (
-                          <span className="rounded-xl bg-[#d6d4d3] px-4 py-2.5 text-sm font-bold text-[#5c5b5b]">Initializing camera link…</span>
+                          <span className="rounded-lg bg-[#d6d4d3] px-4 py-2.5 text-sm font-bold text-[#5c5b5b]">Initializing camera link…</span>
                         )}
-                        <span className="rounded-xl bg-[#e4e2e1] px-4 py-2.5 text-sm font-semibold text-[#2f2f2e]">
+                        <span className="rounded-lg bg-[#e4e2e1] px-4 py-2.5 text-sm font-semibold text-[#2f2f2e]">
                           {form.images.length}/{MAX_CAPTURE_IMAGES} photos synced
                         </span>
                       </div>
@@ -208,7 +208,7 @@ export default function NewListingPage() {
                 {form.images.length ? (
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                     {form.images.map((image, index) => (
-                      <div key={`${index}-${image.slice(0, 32)}`} className="overflow-hidden rounded-2xl bg-[#e4e2e1] shadow-sm">
+                      <div key={`${index}-${image.slice(0, 32)}`} className="overflow-hidden rounded-lg bg-[#e4e2e1] shadow-sm">
                         <img alt={`Listing upload ${index + 1}`} className="aspect-[4/3] h-full w-full object-cover" src={image} />
                       </div>
                     ))}
@@ -222,7 +222,7 @@ export default function NewListingPage() {
                     Listing Title
                   </label>
                   <input
-                    className="w-full rounded-xl bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                    className="w-full rounded-lg bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                     placeholder="e.g. Spacious 1BR in Hub State Street"
                     type="text"
                     value={form.title}
@@ -236,7 +236,7 @@ export default function NewListingPage() {
                   </label>
                   <div className="relative">
                     <AddressAutocompleteInput
-                      className="w-full rounded-xl bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                      className="w-full rounded-lg bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                       id="new-listing-address"
                       placeholder="Street Address, West Lafayette, IN"
                       value={form.address ?? ""}
@@ -252,7 +252,7 @@ export default function NewListingPage() {
                   </label>
                   <div className="relative">
                     <input
-                      className="w-full rounded-xl bg-[#e4e2e1] px-6 py-4 pl-14 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                      className="w-full rounded-lg bg-[#e4e2e1] px-6 py-4 pl-14 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                       placeholder="850"
                       type="number"
                       value={form.price || ""}
@@ -273,7 +273,7 @@ export default function NewListingPage() {
                   </label>
                   <div className="grid grid-cols-3 gap-4">
                     <input
-                      className="rounded-xl bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                      className="rounded-lg bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                       placeholder="Beds"
                       type="number"
                       value={form.bedrooms ?? ""}
@@ -285,7 +285,7 @@ export default function NewListingPage() {
                       }
                     />
                     <input
-                      className="rounded-xl bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                      className="rounded-lg bg-[#e4e2e1] px-6 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                       placeholder="Baths"
                       type="number"
                       step="0.5"
@@ -298,7 +298,7 @@ export default function NewListingPage() {
                       }
                     />
                     <input
-                      className="rounded-xl bg-[#e4e2e1] px-4 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                      className="rounded-lg bg-[#e4e2e1] px-4 py-4 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                       placeholder="Miles"
                       type="number"
                       step="0.1"
@@ -319,7 +319,7 @@ export default function NewListingPage() {
                     Available From
                   </label>
                   <input
-                    className="w-full rounded-xl bg-[#e4e2e1] px-6 py-4 text-sm font-medium uppercase text-[#2f2f2e] focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                    className="w-full rounded-lg bg-[#e4e2e1] px-6 py-4 text-sm font-medium uppercase text-[#2f2f2e] focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                     type="date"
                     value={form.start_date}
                     onChange={(event) => setForm((current) => ({ ...current, start_date: event.target.value }))}
@@ -331,7 +331,7 @@ export default function NewListingPage() {
                     Available To
                   </label>
                   <input
-                    className="w-full rounded-xl bg-[#e4e2e1] px-6 py-4 text-sm font-medium uppercase text-[#2f2f2e] focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                    className="w-full rounded-lg bg-[#e4e2e1] px-6 py-4 text-sm font-medium uppercase text-[#2f2f2e] focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                     type="date"
                     value={form.end_date ?? ""}
                     onChange={(event) => setForm((current) => ({ ...current, end_date: event.target.value }))}
@@ -374,7 +374,7 @@ export default function NewListingPage() {
                   Description
                 </label>
                 <textarea
-                  className="w-full resize-none rounded-2xl bg-[#e4e2e1] px-6 py-6 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
+                  className="w-full resize-none rounded-lg bg-[#e4e2e1] px-6 py-6 font-medium text-[#2f2f2e] placeholder:text-[#5c5b5b]/40 focus:outline-none focus:ring-2 focus:ring-[#0052d0]/15"
                   placeholder="Tell us about the roommates, the vibe, and why someone should live here..."
                   rows={6}
                   value={form.description ?? ""}
@@ -396,7 +396,7 @@ export default function NewListingPage() {
                     Cancel
                   </button>
                   <button
-                    className="flex-1 rounded-xl bg-gradient-to-br from-[#0052d0] to-[#0047b7] px-10 py-4 font-bold text-[#f1f2ff] shadow-xl shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-[0.98] md:flex-none disabled:cursor-not-allowed disabled:opacity-60"
+                    className="flex-1 rounded-lg bg-gradient-to-br from-[#0052d0] to-[#0047b7] px-10 py-4 font-bold text-[#f1f2ff] shadow-xl shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-[0.98] md:flex-none disabled:cursor-not-allowed disabled:opacity-60"
                     disabled={busy}
                     type="submit"
                   >
@@ -409,12 +409,12 @@ export default function NewListingPage() {
 
           <aside className="space-y-8 lg:w-96">
             <div className="sticky top-32">
-              <div className="group relative overflow-hidden rounded-3xl bg-[#f3f0ef] p-8">
+              <div className="group relative overflow-hidden rounded-lg bg-[#f3f0ef] p-8">
                 <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[#0052d0]/10 blur-2xl transition-all duration-700 group-hover:bg-[#0052d0]/20" />
                 <h3 className="relative z-10 mb-6 text-2xl font-extrabold text-[#2f2f2e]">Tips for a strong listing</h3>
                 <ul className="relative z-10 space-y-6">
                   <li className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
                       <span className="text-lg text-[#0052d0]">🖼</span>
                     </div>
                     <div>
@@ -425,7 +425,7 @@ export default function NewListingPage() {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
                       <span className="text-lg text-[#0052d0]">⚡</span>
                     </div>
                     <div>
@@ -436,7 +436,7 @@ export default function NewListingPage() {
                     </div>
                   </li>
                   <li className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm">
                       <span className="text-lg text-[#0052d0]">💬</span>
                     </div>
                     <div>
@@ -447,7 +447,7 @@ export default function NewListingPage() {
                     </div>
                   </li>
                 </ul>
-                <div className="mt-10 rounded-2xl border-l-4 border-[#0052d0] bg-[#0052d0]/20 p-4">
+                <div className="mt-10 rounded-lg border-l-4 border-[#0052d0] bg-[#0052d0]/20 p-4">
                   <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#902e02]">High Demand</p>
                   <p className="text-sm font-medium text-[#ffffff]">
                     Listings for the Spring semester are currently receiving 2x normal traffic.
@@ -456,7 +456,7 @@ export default function NewListingPage() {
               </div>
 
               <div className="mt-8 flex cursor-pointer items-center gap-4 px-8">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e4e2e1] transition-colors hover:bg-[#eaf1ff]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#e4e2e1] transition-colors hover:bg-[#eaf1ff]">
                   <span className="text-[#5c5b5b]">?</span>
                 </div>
                 <div>

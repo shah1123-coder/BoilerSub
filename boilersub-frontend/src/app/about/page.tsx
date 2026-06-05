@@ -29,7 +29,7 @@ const steps = [
 export default function AboutPage() {
   return (
     <main className="mx-auto w-full max-w-7xl px-6 py-14 text-[#2f2f2e] md:px-10 md:py-20">
-      <section className="rounded-3xl bg-gradient-to-br from-[#0052d0] via-[#5e4e27] to-[#2f2f2e] p-10 text-[#eaf1ff] shadow-[0_20px_60px_rgba(0,0,0,0.18)] md:p-14">
+      <section className="rounded-lg bg-gradient-to-br from-[#0052d0] via-[#5e4e27] to-[#2f2f2e] p-10 text-[#eaf1ff] shadow-[0_20px_60px_rgba(0,0,0,0.18)] md:p-14">
         <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#eaf1ff]">About BoilerSub</p>
         <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight md:text-6xl">
           Built for Purdue students, not the open internet.
@@ -42,14 +42,14 @@ export default function AboutPage() {
 
       <section className="mt-12 grid gap-6 md:grid-cols-2">
         {pillars.map((pillar) => (
-          <article key={pillar.title} className="rounded-2xl border border-[#e4e2e1] bg-[#f9f6f5] p-7 shadow-[0_10px_32px_rgba(0,0,0,0.05)]">
+          <article key={pillar.title} className="rounded-lg border border-[#e4e2e1] bg-[#f9f6f5] p-7 shadow-[0_10px_32px_rgba(0,0,0,0.05)]">
             <h2 className="font-display text-2xl font-bold tracking-tight text-[#2f2f2e]">{pillar.title}</h2>
             <p className="mt-3 leading-relaxed text-[#5c5b5b]">{pillar.description}</p>
           </article>
         ))}
       </section>
 
-      <section className="mt-14 rounded-2xl border border-[#e4e2e1] bg-[#dfdcdc]/40 p-8 md:p-10">
+      <section className="mt-14 rounded-lg border border-[#e4e2e1] bg-[#dfdcdc]/40 p-8 md:p-10">
         <h2 className="font-display text-3xl font-extrabold tracking-tight text-[#2f2f2e]">How BoilerSub works</h2>
         <ol className="mt-6 space-y-4">
           {steps.map((step, index) => (
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </ol>
       </section>
 
-      <section className="mt-14 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-[#0052d0] px-7 py-6 text-[#f1f2ff]">
+      <section className="mt-14 flex flex-wrap items-center justify-between gap-4 rounded-lg bg-[#0052d0] px-7 py-6 text-[#f1f2ff]">
         <p className="font-display text-xl font-bold tracking-tight">Ready to find your next Purdue sublease?</p>
         <div className="flex gap-3">
           <Link className="rounded-lg bg-white px-5 py-2.5 font-display font-bold text-[#0052d0] transition hover:opacity-90" href="/listings">
