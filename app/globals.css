@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f6efe8;
+  --background: #fafaf8;
   --foreground: #0f172a;
 }
 
@@ -21,8 +21,8 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   min-height: 100vh;
   background-image:
-    radial-gradient(circle at top left, rgba(0, 82, 208, 0.12), transparent 28rem),
-    radial-gradient(circle at bottom right, rgba(160, 58, 15, 0.1), transparent 24rem);
+    radial-gradient(circle at top left, rgba(0, 82, 208, 0.08), transparent 28rem),
+    radial-gradient(circle at bottom right, rgba(0, 82, 208, 0.05), transparent 24rem);
 }
 
 main {
