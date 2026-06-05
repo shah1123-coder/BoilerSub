@@ -134,7 +134,7 @@ export default function PublicUserPage() {
                 return (
                   <article
                     key={listing.id}
-                    className="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                    className="group flex cursor-pointer flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md"
                   >
                     <Link className="relative h-64 overflow-hidden" href={`/listings/${listing.id}`}>
                       {primaryImage ? (

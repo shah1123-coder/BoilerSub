@@ -218,7 +218,7 @@ export default function ProfileListingsPage() {
                           Edit
                         </Link>
                         <button
-                          className="rounded-lg px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="rounded-lg px-4 py-2 font-display text-sm font-bold tracking-tight text-[#0052d0] transition-colors hover:bg-[#0052d0]/5 disabled:cursor-not-allowed disabled:opacity-30"
                           disabled={deletingId === listing.id}
                           type="button"
                           onClick={() => void handleDelete(listing.id, listing.title)}

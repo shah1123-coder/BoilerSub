@@ -46,7 +46,7 @@ a {
 
 @layer components {
   .panel {
-    @apply rounded-[1.5rem] border border-white/60 bg-white/85 shadow-panel backdrop-blur;
+    @apply rounded-[1.5rem] border border-white/60 bg-white/85 shadow-sm backdrop-blur;
   }
 
   .field {
@@ -70,7 +70,7 @@ a {
   }
 
   .glass-card {
-    @apply rounded-lg border border-white/60 bg-white/70 shadow-panel backdrop-blur;
+    @apply rounded-lg border border-white/60 bg-white/70 shadow-sm backdrop-blur;
   }
 
   .glass-panel {

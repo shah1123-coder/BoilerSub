@@ -6,10 +6,10 @@ export function ListingCard({ listing }: { listing: Listing }) {
   return (
     <Link
       href={`/listings/${listing.id}`}
-      className="group glass-card flex h-full flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-2xl"
+      className="group glass-card flex h-full flex-col overflow-hidden transition hover:-translate-y-1 hover:shadow-md"
     >
       <div className="relative h-44 overflow-hidden bg-gradient-to-br from-brand-blue via-[#5d8ff0] to-brand-coral">
-        <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_20%,white,transparent_30%),radial-gradient(circle_at_80%_30%,white,transparent_25%),linear-gradient(135deg,transparent_20%,rgba(255,255,255,0.35)_20%,rgba(255,255,255,0.35)_24%,transparent_24%)]" />
+        <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_20%,white,transparent_30%),radial-gradient(circle_at_80%_30%,white,transparent_25%),linear-gradient(135deg,transparent_20%,rgba(255,255,255,0.35)_20%,rgba(255,255,255,0.35)_24%,transparent_24%)]" />
         <div className="absolute bottom-4 left-4 rounded-full bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-brand-blue">
           Purdue
         </div>

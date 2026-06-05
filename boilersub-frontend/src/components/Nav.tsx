@@ -169,7 +169,7 @@ export function Nav() {
                 Sign In
               </AuthLaunchLink>
               <Link
-                className="rounded-lg bg-[#0052d0] px-6 py-2.5 font-display font-bold text-[#f1f2ff] shadow-lg transition-all hover:opacity-90 active:scale-95"
+                className="rounded-lg bg-[#0052d0] px-6 py-2.5 font-display font-bold text-[#f1f2ff] shadow-md transition-all hover:opacity-90 active:scale-95"
                 href="/listings/new"
               >
                 Post Ad

@@ -54,17 +54,17 @@ export default function ProfilePage() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="space-y-8 md:col-span-8">
             <section className="relative overflow-hidden rounded-[1.5rem] bg-white p-8 shadow-[0px_12px_32px_rgba(0,0,0,0.04)]">
-              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#0052d0]/5 blur-3xl" />
+              <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#0052d0]/5 blur-2xl" />
               <div className="relative z-10 flex flex-col items-center gap-8 md:flex-row md:items-start">
                 <div className="relative">
                   <Image
                     alt={user?.full_name ?? user?.email ?? "Profile avatar"}
-                    className="h-40 w-40 rounded-[1.75rem] object-cover shadow-xl"
+                    className="h-40 w-40 rounded-[1.75rem] object-cover shadow-md"
                     height={160}
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCHJpE5p1_29TQDg4BICkX9VjBGcxiqPZJ_XGa_zp5QYrx1g1Vza-z_nNb0cB5BuwrDTY2ETh9uCEnDXqSYKoG2e-5C2KXWQVCeqRM99j-y-FjP4yIit3EHn3DwzaZVx19_q5hdNImeEXZwa6aB-pQExNqS_7AQ6VdoqymXh7hwu2vHJEDK1onPT3B-5YBTZ7-88mmY7TgCfOdfMofSdOphRB-jnyirdcMyu7Gqh_qn4b6M5v1NrrflUvnN6G2kkVsSdukWxx1TeNQ"
                     width={160}
                   />
-                  <div className="absolute -bottom-2 -right-2 rounded-lg bg-white p-2 shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 rounded-lg bg-white p-2 shadow-md">
                     <span className="text-2xl text-[#0052d0]">✓</span>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function ProfilePage() {
                   />
                 </div>
                 <div className="pt-4">
-                  <button className="flex items-center gap-3 rounded-lg bg-[#0052d0] px-8 py-4 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:bg-[#0047b7]">
+                  <button className="flex items-center gap-3 rounded-lg bg-[#0052d0] px-8 py-4 font-bold text-[#f1f2ff] shadow-md shadow-[#0052d0]/20 transition-all hover:bg-[#0047b7]">
                     <span>Save Changes</span>
                     <span>💾</span>
                   </button>
@@ -252,7 +252,7 @@ export default function ProfilePage() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <button className="flex items-center gap-3 rounded-lg bg-[#2f2f2e] px-8 py-4 font-bold text-[#f9f7f3] shadow-lg transition-all hover:bg-[#171717]">
+                  <button className="flex items-center gap-3 rounded-lg bg-[#2f2f2e] px-8 py-4 font-bold text-[#f9f7f3] shadow-md transition-all hover:bg-[#171717]">
                     <span>Update Password</span>
                     <span>🔐</span>
                   </button>
@@ -274,12 +274,12 @@ export default function ProfilePage() {
               <Link className="group flex items-center gap-4 rounded-lg p-4 text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]" href="/profile/listings">
                 <span className="text-[#0052d0]">☰</span>
                 <span className="font-bold">My Listings</span>
-                <span className="ml-auto text-sm opacity-30">›</span>
+                <span className="ml-auto text-sm opacity-20">›</span>
               </Link>
               <button className="group flex w-full items-center gap-4 rounded-lg p-4 text-left text-[#2f2f2e] transition-all hover:bg-[#e4e2e1]">
                 <span className="text-[#0052d0]">⚙</span>
                 <span className="font-bold">Account Settings</span>
-                <span className="ml-auto text-sm opacity-30">›</span>
+                <span className="ml-auto text-sm opacity-20">›</span>
               </button>
               <div className="mx-4 my-1 h-px bg-[#dfdcdc]" />
               <button

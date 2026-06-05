@@ -288,10 +288,10 @@ export default function ListingDetailPage() {
 
               <div className="md:col-span-4">
                 <div className="sticky top-32 space-y-8">
-                  <div className="rounded-2xl border border-white/20 bg-[#dfdcdc] p-8 shadow-xl">
+                  <div className="rounded-2xl border border-white/20 bg-[#dfdcdc] p-8 shadow-md">
                     <h3 className="mb-6 text-xl font-extrabold">Ready to move in?</h3>
                     <button
-                      className="w-full rounded-xl bg-gradient-to-br from-[#0052d0] to-[#0047b7] py-4 text-lg font-bold text-white shadow-lg shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="w-full rounded-xl bg-gradient-to-br from-[#0052d0] to-[#0047b7] py-4 text-lg font-bold text-white shadow-md shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
                       disabled={!canContactLister}
                       onClick={() => {
                         if (!owner?.id) {

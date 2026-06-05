@@ -124,21 +124,21 @@ export default function CaptureImagesPage() {
       {message ? <Toast kind="error" message={message} /> : null}
       {successMessage ? <Toast kind="success" message={successMessage} /> : null}
 
-      <section className="overflow-hidden rounded-lg bg-black shadow-xl">
+      <section className="overflow-hidden rounded-lg bg-black shadow-md">
         <video ref={videoRef} autoPlay playsInline muted className="aspect-[3/4] w-full bg-black object-cover md:aspect-video" />
       </section>
       <canvas ref={canvasRef} className="hidden" />
 
       <div className="flex flex-wrap gap-3">
         <button
-          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/30 transition-all hover:bg-[#0047b7] active:scale-[0.98]"
+          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#f1f2ff] shadow-md shadow-[#0052d0]/30 transition-all hover:bg-[#0047b7] active:scale-[0.98]"
           type="button"
           onClick={takePhoto}
         >
           Take Photo
         </button>
         <button
-          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#eaf1ff] shadow-lg shadow-[#0052d0]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-lg bg-[#0052d0] px-6 py-3 font-bold text-[#eaf1ff] shadow-md shadow-[#0052d0]/20 transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
           disabled={busy}
           type="button"
           onClick={() => void uploadPhotos()}

@@ -23,7 +23,7 @@ export default function SignupPage() {
   return (
     <main className="flex min-h-screen flex-col text-[#2f2f2e] md:flex-row">
       <section className="relative hidden w-full items-end overflow-hidden bg-[#0052d0] p-12 md:flex md:w-5/12 lg:p-20">
-        <div className="absolute inset-0 z-0 opacity-40">
+        <div className="absolute inset-0 z-0 opacity-25">
           <Image
             alt="Purdue University campus architecture with classical brick buildings and modern student pathways under a clear sky"
             className="object-cover"

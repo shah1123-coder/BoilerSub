@@ -96,8 +96,8 @@ export function StitchErrorPage({
         </div>
       </section>
 
-      <div className="pointer-events-none fixed right-[-6rem] top-1/4 h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[120px]" />
-      <div className="pointer-events-none fixed bottom-1/4 left-[-6rem] h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[120px]" />
+      <div className="pointer-events-none fixed right-[-6rem] top-1/4 h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[80px]" />
+      <div className="pointer-events-none fixed bottom-1/4 left-[-6rem] h-96 w-96 rounded-full bg-[#0052d0]/5 blur-[80px]" />
     </main>
   );
 }

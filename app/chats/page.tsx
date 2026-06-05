@@ -65,7 +65,7 @@ export default function ChatsPage() {
             <Link
               key={entry.conversation_key}
               href={`/listings/${entry.listing_id}/chat?peer=${entry.peer.id}`}
-              className="panel block p-4 transition-all hover:border-[#0052d0] hover:shadow-lg active:scale-[0.99]"
+              className="panel block p-4 transition-all hover:border-[#0052d0] hover:shadow-md active:scale-[0.99]"
             >
               <div className="flex items-center justify-between">
                 <div>

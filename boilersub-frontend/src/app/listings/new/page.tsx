@@ -349,7 +349,7 @@ export default function NewListingPage() {
                         key={amenity}
                         className={
                           active
-                            ? "rounded-full bg-[#0052d0] px-5 py-2 text-sm font-semibold text-[#f1f2ff] shadow-lg shadow-[#0052d0]/20"
+                            ? "rounded-full bg-[#0052d0] px-5 py-2 text-sm font-semibold text-[#f1f2ff] shadow-md shadow-[#0052d0]/20"
                             : "rounded-full bg-[#e4e2e1] px-5 py-2 text-sm font-semibold text-[#2f2f2e] transition-all hover:bg-[#0052d0]/10 hover:text-[#0052d0]"
                         }
                         type="button"
@@ -396,7 +396,7 @@ export default function NewListingPage() {
                     Cancel
                   </button>
                   <button
-                    className="flex-1 rounded-lg bg-gradient-to-br from-[#0052d0] to-[#0047b7] px-10 py-4 font-bold text-[#f1f2ff] shadow-xl shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-[0.98] md:flex-none disabled:cursor-not-allowed disabled:opacity-60"
+                    className="flex-1 rounded-lg bg-gradient-to-br from-[#0052d0] to-[#0047b7] px-10 py-4 font-bold text-[#f1f2ff] shadow-md shadow-[#0052d0]/20 transition-all hover:scale-[1.02] active:scale-[0.98] md:flex-none disabled:cursor-not-allowed disabled:opacity-60"
                     disabled={busy}
                     type="submit"
                   >

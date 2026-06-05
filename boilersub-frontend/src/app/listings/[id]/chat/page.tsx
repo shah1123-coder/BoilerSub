@@ -160,7 +160,7 @@ function ChatContent() {
       
       {contextMenu && (
         <div 
-          className="fixed z-50 flex items-center gap-1 rounded-lg border border-[#ece9e8] bg-white p-1 shadow-panel"
+          className="fixed z-50 flex items-center gap-1 rounded-lg border border-[#ece9e8] bg-white p-1 shadow-sm"
           style={{ top: contextMenu.y, left: contextMenu.x }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -190,7 +190,7 @@ function ChatContent() {
         </div>
       )}
 
-      <section className="overflow-hidden rounded-2xl border border-white/60 bg-white/85 shadow-panel">
+      <section className="overflow-hidden rounded-2xl border border-white/60 bg-white/85 shadow-sm">
         <div className="h-[62vh] overflow-y-auto p-4 transition-all" ref={scrollerRef}>
           <div className="mx-auto flex max-w-3xl flex-col gap-2">
             {messages.map((message) => {

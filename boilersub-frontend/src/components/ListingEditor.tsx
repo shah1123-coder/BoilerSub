@@ -468,7 +468,7 @@ export function ListingEditor({
 
               {onDelete ? (
                 <button
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-[#0052d0] transition-colors hover:bg-[#0052d0]/10 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-[#0052d0] transition-colors hover:bg-[#0052d0]/10 disabled:cursor-not-allowed disabled:opacity-30 sm:w-auto"
                   disabled={deleting || busy}
                   type="button"
                   onClick={async () => {

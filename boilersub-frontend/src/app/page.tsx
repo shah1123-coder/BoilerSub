@@ -62,18 +62,18 @@ export default function HomePage() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-6 text-center">
             <div className="mb-12">
-              <h1 className="mb-6 font-display text-6xl font-extrabold tracking-tighter text-white drop-shadow-2xl md:text-8xl">
+              <h1 className="mb-6 font-display text-6xl font-extrabold tracking-tighter text-white drop-shadow-sm md:text-8xl">
                 Stop doomscrolling
                 <br />
                 <span className="text-[#0052d0]">Apartments</span>
               </h1>
-              <p className="mx-auto mb-12 max-w-2xl text-xl font-medium text-white/90 drop-shadow-md md:text-2xl">
+              <p className="mx-auto mb-12 max-w-2xl text-xl font-medium text-white/90 drop-shadow-sm md:text-2xl">
                 The elite housing curator for the Purdue community. Find your next home in West Lafayette with kinetic
                 precision.
               </p>
             </div>
 
-            <div className="glass-panel mx-auto flex max-w-4xl flex-col items-center gap-2 rounded-lg p-2 shadow-2xl md:flex-row">
+            <div className="glass-panel mx-auto flex max-w-4xl flex-col items-center gap-2 rounded-lg p-2 shadow-md md:flex-row">
               <div className="grid w-full flex-1 grid-cols-1 gap-2 px-4 md:grid-cols-3">
                 <div className="flex flex-col items-start py-2">
                   <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-[#0052d0]">Location</span>
@@ -110,7 +110,7 @@ export default function HomePage() {
                 </div>
               </div>
               <Link
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0052d0] px-10 py-4 font-bold text-white shadow-lg transition-all hover:bg-[#0047b7] active:scale-95 md:w-auto"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0052d0] px-10 py-4 font-bold text-white shadow-md transition-all hover:bg-[#0047b7] active:scale-95 md:w-auto"
                 href="/listings"
               >
                 <span>⌕</span>
@@ -121,7 +121,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
 
               <Link
-                className="rounded-full bg-[#0052d0] px-8 py-3 font-bold text-white shadow-lg transition-all hover:brightness-110"
+                className="rounded-full bg-[#0052d0] px-8 py-3 font-bold text-white shadow-md transition-all hover:brightness-110"
                 href="/listings/new"
               >
                 Post Your Sublease
